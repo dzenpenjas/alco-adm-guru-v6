@@ -287,7 +287,8 @@ export function normalizeSubjectString(str?: string): string {
 /**
  * Cari mata pelajaran berdasarkan code
  */
-export function findSubjectByCode(code: string): CurriculumSubject | undefined {
+export function findSubjectByCode(code?: string): CurriculumSubject | undefined {
+  if (!code || typeof code !== 'string') return undefined;
   const norm = code.trim().toUpperCase();
   return CURRICULUM_SUBJECTS.find((s) => s.code === norm);
 }

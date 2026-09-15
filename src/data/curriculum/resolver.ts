@@ -3,6 +3,7 @@ import {
   CurriculumType,
   ResolvedCurriculumContext,
   SchoolLevel,
+  CurriculumSubject,
 } from './types';
 import { ALL_CURRICULUM_STRUCTURE_RULES } from './structure';
 import {
@@ -103,6 +104,64 @@ export function resolveAcademicStartYear(academicYear?: string): number | null {
   return parsed ? parsed.startYear : null;
 }
 
+export interface SubjectResolutionResult {
+  status: 'RESOLVED' | 'UNRESOLVED' | 'AMBIGUOUS';
+  subject?: CurriculumSubject;
+  subjectCode?: string;
+  isCanonical: boolean;
+  reason?: string;
+}
+
+/**
+ * Resolusi string input mata pelajaran (nama atau alias) menjadi SubjectResolutionResult deterministik.
+ * Membedakan resolusi kode baku langsung (isCanonical: true) vs pemetaan alias/nama (isCanonical: false).
+ */
+export function resolveSubjectInput(input?: string): SubjectResolutionResult {
+  if (!input || typeof input !== 'string') {
+    return { status: 'UNRESOLVED', isCanonical: false, reason: 'Input subjek kosong atau tidak valid' };
+  }
+  const trimmed = input.trim();
+  if (!trimmed) {
+    return { status: 'UNRESOLVED', isCanonical: false, reason: 'Input subjek kosong' };
+  }
+
+  // 1. Cek langsung kecocokan kode baku
+  const byCode = findSubjectByCode(trimmed);
+  if (byCode) {
+    return {
+      status: 'RESOLVED',
+      subject: byCode,
+      subjectCode: byCode.code,
+      isCanonical: true,
+    };
+  }
+
+  // 2. Cek pencarian nama resmi atau alias
+  const byAlias = findSubjectByNameOrAlias(trimmed);
+  if (byAlias) {
+    return {
+      status: 'RESOLVED',
+      subject: byAlias,
+      subjectCode: byAlias.code,
+      isCanonical: false,
+    };
+  }
+
+  return {
+    status: 'UNRESOLVED',
+    isCanonical: false,
+    reason: `Mata pelajaran '${input}' tidak dapat dipetakan secara deterministik ke Master Mata Pelajaran`,
+  };
+}
+
+/**
+ * Canonicalizer helper untuk mendapatkan kode subjek baku dari input teks mentah
+ */
+export function canonicalizeSubjectInput(input?: string): string | null {
+  const res = resolveSubjectInput(input);
+  return res.status === 'RESOLVED' && res.subjectCode ? res.subjectCode : null;
+}
+
 /**
  * RESOLVER UTAMA KURIKULUM NASIONAL
  *
@@ -136,16 +195,21 @@ export function resolveCurriculumContext(
     }
   }
 
-  const rawSubject = subjectCode || subjectInput;
-  if (!rawSubject) return null;
-
-  // 1. Resolve Subject
-  const subject =
-    (subjectCode ? findSubjectByCode(subjectCode) : null) ||
-    findSubjectByCode(rawSubject) ||
-    findSubjectByNameOrAlias(rawSubject);
-
-  if (!subject) {
+  // 1. Resolve Canonical Subject
+  let subject: CurriculumSubject | null = null;
+  if (subjectCode) {
+    subject = findSubjectByCode(subjectCode) || null;
+    if (!subject) {
+      // subjectCode eksplisit diberikan namun tidak valid -> UNRESOLVED / null
+      return null;
+    }
+  } else if (subjectInput) {
+    const subRes = resolveSubjectInput(subjectInput);
+    if (subRes.status !== 'RESOLVED' || !subRes.subject) {
+      return null;
+    }
+    subject = subRes.subject;
+  } else {
     return null;
   }
 
@@ -325,7 +389,7 @@ export function resolveCurriculumContext(
     effectivePhase: phase,
     isOfficial: matchedRule.verificationStatus === 'VERIFIED',
     isAmbiguous: false,
-    explanation: `Alokasi resmi: ${matchedRule.derivedWeeklyJP} JP/minggu (${matchedRule.intrakurikulerAnnualJP} JP intrakurikuler/tahun) berdasarkan ${regulationSources[0]?.title || 'Regulasi Resmi'}.`,
+    explanation: `Alokasi intrakurikuler normatif: ${matchedRule.intrakurikulerAnnualJP} JP/tahun. Ekuivalen referensi: ${String(matchedRule.derivedWeeklyJP).replace('.', ',')} JP/minggu berdasarkan ${regulationSources[0]?.title || 'Regulasi Resmi'}.`,
   };
 }
 

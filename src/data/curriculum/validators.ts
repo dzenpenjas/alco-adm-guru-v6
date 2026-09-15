@@ -91,7 +91,7 @@ export function validateStructureRule(rule: CurriculumStructureRule): Validation
     }
   }
 
-  // 4. VERIFIED HARUS BENAR-BENAR PUNYA SUMBER RESMI TERDAFTAR
+  // 4. VERIFIED HARUS BENAR-BENAR PUNYA SUMBER RESMI DAN EVIDENCE TERDAFTAR
   if (rule.verificationStatus === 'VERIFIED') {
     const hasValidRegisteredSource =
       rule.regulationIds &&
@@ -106,6 +106,44 @@ export function validateStructureRule(rule: CurriculumStructureRule): Validation
         severity: 'ERROR',
       });
     }
+
+    if (!rule.evidence || rule.evidence.length === 0) {
+      issues.push({
+        ruleId: rule.id,
+        field: 'evidence',
+        message: `Aturan berstatus VERIFIED wajib menyertakan evidence resmi (locator lampiran/pasal/tabel) yang dapat diverifikasi.`,
+        severity: 'ERROR',
+      });
+    } else {
+      for (const ev of rule.evidence) {
+        if (!REGULATION_ID_SET.has(ev.regulationId)) {
+          issues.push({
+            ruleId: rule.id,
+            field: 'evidence',
+            message: `Evidence mereferensikan regulationId '${ev.regulationId}' yang tidak terdaftar di Regulation Registry resmi.`,
+            severity: 'ERROR',
+          });
+        }
+        if (!ev.sourceUrl || typeof ev.sourceUrl !== 'string') {
+          issues.push({
+            ruleId: rule.id,
+            field: 'evidence',
+            message: `Evidence harus menyertakan sourceUrl resmi yang valid.`,
+            severity: 'ERROR',
+          });
+        }
+      }
+    }
+  }
+
+  // 4b. Validasi Kontradiksi Selection Group
+  if (rule.selectionGroup && rule.minSelections === 1 && rule.subjectType === 'REQUIRED') {
+    issues.push({
+      ruleId: rule.id,
+      field: 'selectionGroup',
+      message: `Kontradiksi selection group: aturan pada group '${rule.selectionGroup}' memiliki minSelections=1 tetapi subjectType ditandai REQUIRED. Cabang pilihan seharusnya bertipe ELECTIVE dengan selectionGroupRequired=true.`,
+      severity: 'ERROR',
+    });
   }
 
   // 5. Validasi Non-Negatif untuk Seluruh JP (Null-Safe)

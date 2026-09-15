@@ -15,6 +15,7 @@
 import {
   ALL_CURRICULUM_STRUCTURE_RULES,
   resolveCurriculumContext,
+  resolveSubjectInput,
   parseAcademicYear,
   getPhaseForGrade,
   getSchoolLevelForGrade,
@@ -25,6 +26,7 @@ import {
   findSubjectByNameOrAlias,
   CURRICULUM_REGULATIONS,
   findCPBySubjectAndPhase,
+  resolveCPContext,
   SD_CP_ENTRIES,
   SMP_CP_ENTRIES,
   SMA_CP_ENTRIES,
@@ -156,7 +158,7 @@ async function runCurriculumMasterTests() {
     'Coding & AI bersumber dari Permendikdasmen No. 13 Tahun 2025'
   );
 
-  // Coding & AI SD Kelas 4 TA 2025/2026 harus tidak aktif (null / unverified) karena rollout baru mulai TA 2026/2027
+  // Coding & AI SD Kelas 4 TA 2025/2026 berstatus UNVERIFIED secara jujur (tanpa menebak rollout)
   const codingGrade4In2025 = resolveCurriculumContext({
     grade: 4,
     subjectInput: 'Coding & AI',
@@ -164,18 +166,15 @@ async function runCurriculumMasterTests() {
   });
   assert(
     codingGrade4In2025 === null || codingGrade4In2025?.verificationStatus === 'UNVERIFIED',
-    'Coding & AI SD Kelas 4 tidak aktif / null untuk TA 2025/2026 sesuai fase rollout'
+    'Coding & AI SD Kelas 4 tidak aktif / berstatus UNVERIFIED untuk TA 2025/2026'
   );
 
-  // Coding & AI SD Kelas 4 TA 2026/2027 aktif dan teresolusi
-  const codingGrade4In2026 = resolveCurriculumContext({
-    grade: 4,
-    subjectInput: 'Coding & AI',
-    academicYear: '2026/2027',
-  });
+  const codingGrade4Rule = ALL_CURRICULUM_STRUCTURE_RULES.find(
+    (r) => r.id === 'km25-sd-4-coding-ai'
+  );
   assert(
-    codingGrade4In2026 !== null && codingGrade4In2026.derivedWeeklyJP === 2,
-    'Coding & AI SD Kelas 4 aktif dan teresolusi untuk TA 2026/2027'
+    codingGrade4Rule !== undefined && codingGrade4Rule.verificationStatus === 'UNVERIFIED',
+    'Coding & AI SD Kelas 4 berstatus UNVERIFIED secara jujur di dataset master (tanpa menebak rollout)'
   );
 
   // TEST 7: Pemisahan Tiga Lapisan JP & Aturan Ketat Aktual
@@ -665,6 +664,127 @@ async function runCurriculumMasterTests() {
   assert(
     badWeeksRes.isValid === false && badWeeksRes.issues.some((i) => i.field === 'referenceWeeksPerYear'),
     'Validator mendeteksi referenceWeeksPerYear di luar rentang standar (32–36)'
+  );
+
+  // TEST 21: Evidence Enforcement on VERIFIED Rules
+  console.log('\n--- 21. Evidence Enforcement on VERIFIED Rules ---');
+  const ruleWithoutEvidence: any = {
+    id: 'test-no-evidence',
+    curriculumType: 'KURIKULUM_MERDEKA',
+    level: 'SD',
+    grade: 1,
+    phase: 'A',
+    subjectCode: 'BINDO',
+    intrakurikulerAnnualJP: 216,
+    kokurikulerAnnualJP: 72,
+    totalAnnualJP: 288,
+    referenceWeeksPerYear: 36,
+    minutesPerJP: 35,
+    derivedWeeklyJP: 6,
+    regulationIds: ['REG-PERMENDIKBUDRISTEK-12-2024'],
+    verificationStatus: 'VERIFIED',
+    evidence: [], // KOSONG -> harus ERROR
+  };
+  const noEvidenceRes = validateStructureRule(ruleWithoutEvidence);
+  assert(
+    noEvidenceRes.isValid === false &&
+      noEvidenceRes.issues.some((i) => i.field === 'evidence' && i.severity === 'ERROR'),
+    'Validator menghasilkan ERROR jika rule berstatus VERIFIED tidak memiliki evidence resmi'
+  );
+
+  // TEST 22: Selection Group Contradiction Guard
+  console.log('\n--- 22. Selection Group Contradiction Guard ---');
+  const contradictingSelectionRule: any = {
+    id: 'test-contradiction-selection',
+    curriculumType: 'KURIKULUM_MERDEKA',
+    level: 'SD',
+    grade: 1,
+    phase: 'A',
+    subjectCode: 'SENI_RUPA',
+    subjectType: 'REQUIRED', // KONTRADIKSI: dalam group minSelections=1 tetapi ditandai REQUIRED
+    selectionGroup: 'SENI_BUDAYA',
+    minSelections: 1,
+    intrakurikulerAnnualJP: 108,
+    kokurikulerAnnualJP: 36,
+    totalAnnualJP: 144,
+    referenceWeeksPerYear: 36,
+    minutesPerJP: 35,
+    derivedWeeklyJP: 3,
+    regulationIds: ['REG-PERMENDIKBUDRISTEK-12-2024'],
+    verificationStatus: 'VERIFIED',
+    evidence: [
+      {
+        regulationId: 'REG-PERMENDIKBUDRISTEK-12-2024',
+        sourceUrl: 'https://jdih.kemdikbud.go.id/',
+      },
+    ],
+  };
+  const contradictionRes = validateStructureRule(contradictingSelectionRule);
+  assert(
+    contradictionRes.isValid === false &&
+      contradictionRes.issues.some((i) => i.field === 'selectionGroup' && i.severity === 'ERROR'),
+    'Validator mendeteksi kontradiksi selection group (minSelections=1 tetapi subjectType ditandai REQUIRED)'
+  );
+
+  // TEST 23: resolveSubjectInput Canonicalization
+  console.log('\n--- 23. resolveSubjectInput Canonicalization ---');
+  const subjectInputRes1 = resolveSubjectInput('Pendidikan Jasmani');
+  assert(
+    subjectInputRes1.status === 'RESOLVED' && subjectInputRes1.subjectCode === 'PJOK',
+    'resolveSubjectInput menyelesaikan "Pendidikan Jasmani" ke PJOK'
+  );
+  assert(
+    subjectInputRes1.isCanonical === false,
+    'Resolusi melalui alias tercatat dengan isCanonical: false'
+  );
+
+  const subjectInputRes2 = resolveSubjectInput('PJOK');
+  assert(
+    subjectInputRes2.status === 'RESOLVED' &&
+      subjectInputRes2.subjectCode === 'PJOK' &&
+      subjectInputRes2.isCanonical === true,
+    'Resolusi dengan kode baku langsung tercatat dengan isCanonical: true'
+  );
+
+  const subjectInputRes3 = resolveSubjectInput('Mata Pelajaran Fiktif Yang Tidak Pernah Ada');
+  assert(
+    subjectInputRes3.status === 'UNRESOLVED',
+    'Subject input tidak dikenal menghasilkan status UNRESOLVED'
+  );
+
+  // TEST 24: resolveCPContext Ambiguity-Safe Logic
+  console.log('\n--- 24. resolveCPContext Ambiguity-Safe Logic ---');
+  const cpResolved = resolveCPContext({
+    subjectCode: 'PJOK',
+    phase: 'A',
+    level: 'SD',
+  });
+  assert(
+    cpResolved.status === 'RESOLVED' && cpResolved.entry?.id === 'cp-sd-fase-a-pjok',
+    'resolveCPContext menyelesaikan CP PJOK Fase A dengan status RESOLVED'
+  );
+
+  const cpUnresolved = resolveCPContext({
+    subjectCode: 'MAPEL_PALSU',
+    phase: 'A',
+    level: 'SD',
+  });
+  assert(
+    cpUnresolved.status === 'UNRESOLVED',
+    'resolveCPContext mengembalikan status UNRESOLVED untuk mapel yang tidak memiliki CP'
+  );
+
+  // TEST 25: All Active Rules in ALL_CURRICULUM_STRUCTURE_RULES Have Valid Evidence
+  console.log('\n--- 25. All Active VERIFIED Rules Have Valid Evidence ---');
+  const verifiedActiveRules = ALL_CURRICULUM_STRUCTURE_RULES.filter(
+    (r) => r.verificationStatus === 'VERIFIED'
+  );
+  const rulesMissingEvidence = verifiedActiveRules.filter(
+    (r) => !r.evidence || r.evidence.length === 0
+  );
+  assert(
+    rulesMissingEvidence.length === 0,
+    `Semua ${verifiedActiveRules.length} aturan VERIFIED memiliki bukti resmi (evidence) terdaftar tanpa celah`
   );
 
   console.log('\n===========================================================');

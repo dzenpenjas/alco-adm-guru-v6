@@ -21,10 +21,24 @@ export interface RegulationSource {
   year: number;
   type: RegulationSourceType;
   authority: string;
+  legalEffectiveDate?: string | null;
+  implementationFromAcademicYear?: string | null;
   effectiveFrom?: string;
   effectiveUntil?: string;
   sourceUrl: string;
   notes?: string;
+}
+
+export interface CurriculumRuleEvidence {
+  regulationId: string;
+  sourceUrl: string;
+  locator?: {
+    attachment?: string;
+    table?: string;
+    page?: number;
+    section?: string;
+    note?: string;
+  };
 }
 
 export type EducationLevel = 'SD' | 'SMP' | 'SMA';
@@ -72,10 +86,12 @@ export interface CurriculumStructureRule {
   allocationMode?: AllocationMode;
 
   selectionGroup?: string;
+  selectionGroupRequired?: boolean;
   minSelections?: number;
   maxSelections?: number;
 
   regulationIds: string[];
+  evidence?: CurriculumRuleEvidence[];
 
   effectiveFrom?: string;
   effectiveUntil?: string;
@@ -111,6 +127,8 @@ export interface CurriculumCPEntry {
     content: string;
   }>;
   regulationIds: string[];
+  evidence?: CurriculumRuleEvidence[];
+  implementationFromAcademicYear?: string | null;
   verificationStatus: VerificationStatus;
   notes?: string;
 }

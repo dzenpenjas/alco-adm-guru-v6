@@ -1,4 +1,4 @@
-import { CurriculumPhase, SchoolLevel, VerificationStatus } from '../types';
+import { CurriculumPhase, CurriculumRuleEvidence, SchoolLevel, VerificationStatus } from '../types';
 
 export interface CPElement {
   name: string;
@@ -13,6 +13,8 @@ export interface MasterCPEntry {
   generalDescription: string;
   elements: CPElement[];
   regulationSourceId: string;
+  evidence?: CurriculumRuleEvidence[];
+  implementationFromAcademicYear?: string | null;
   effectiveFrom?: string;
   effectiveUntil?: string;
   verificationStatus: VerificationStatus;

@@ -16,45 +16,153 @@ export const ALL_MASTER_CP_ENTRIES: MasterCPEntry[] = [
   ...SMA_CP_ENTRIES,
 ];
 
+export interface ResolveCPOptions {
+  subjectCode?: string;
+  subjectInput?: string;
+  subjectCodeOrName?: string;
+  phase: CurriculumPhase;
+  academicYear?: string;
+  level?: SchoolLevel;
+}
+
+export interface CPResolutionResult {
+  cp: MasterCPEntry | null;
+  entry?: MasterCPEntry | null;
+  status: 'RESOLVED' | 'UNRESOLVED' | 'AMBIGUOUS';
+  candidates?: MasterCPEntry[];
+  reason?: string;
+}
+
 /**
- * Cari Capaian Pembelajaran resmi berdasarkan mata pelajaran dan fase (serta tahun ajaran jika tersedia)
+ * Menyelesaikan Capaian Pembelajaran resmi berdasarkan mata pelajaran dan fase.
+ * Mencegah pengembalian kandidat pertama saat terjadi ambiguitas (status AMBIGUOUS jika > 1).
+ * Mendukung baik pemanggilan dengan positional arguments maupun options object.
+ */
+export function resolveCPContext(
+  subjectOrOptions: string | ResolveCPOptions,
+  phaseArg?: CurriculumPhase,
+  academicYearArg?: string
+): CPResolutionResult {
+  let subjectInput = '';
+  let phase: CurriculumPhase;
+  let academicYear: string | undefined;
+  let levelFilter: SchoolLevel | undefined;
+
+  if (typeof subjectOrOptions === 'object' && subjectOrOptions !== null) {
+    subjectInput =
+      subjectOrOptions.subjectCode ||
+      subjectOrOptions.subjectInput ||
+      subjectOrOptions.subjectCodeOrName ||
+      '';
+    phase = subjectOrOptions.phase;
+    academicYear = subjectOrOptions.academicYear;
+    levelFilter = subjectOrOptions.level;
+  } else {
+    subjectInput = typeof subjectOrOptions === 'string' ? subjectOrOptions : '';
+    phase = phaseArg!;
+    academicYear = academicYearArg;
+  }
+
+  if (!subjectInput || !phase) {
+    return {
+      cp: null,
+      entry: null,
+      status: 'UNRESOLVED',
+      candidates: [],
+      reason: 'Parameter subjectInput atau phase tidak valid/kosong.',
+    };
+  }
+
+  const subject =
+    findSubjectByCode(subjectInput) || findSubjectByNameOrAlias(subjectInput);
+  const code = subject ? subject.code : subjectInput.toUpperCase().trim();
+
+  let baseCandidates = ALL_MASTER_CP_ENTRIES.filter(
+    (cp) => cp.subjectCode === code && cp.phase === phase
+  );
+
+  if (levelFilter) {
+    baseCandidates = baseCandidates.filter((cp) => cp.level === levelFilter);
+  }
+
+  if (baseCandidates.length === 0) {
+    return {
+      cp: null,
+      entry: null,
+      status: 'UNRESOLVED',
+      candidates: [],
+      reason: `Tidak ditemukan Capaian Pembelajaran untuk mata pelajaran ${code} pada Fase ${phase}.`,
+    };
+  }
+
+  // Filter kandidat yang non-superseded
+  const activeCandidates = baseCandidates.filter((c) => c.verificationStatus !== 'SUPERSEDED');
+  if (activeCandidates.length === 0) {
+    return {
+      cp: null,
+      entry: null,
+      status: 'UNRESOLVED',
+      candidates: [],
+      reason: `Semua Capaian Pembelajaran untuk ${code} Fase ${phase} telah berstatus SUPERSEDED.`,
+    };
+  }
+
+  // Jika tahun ajaran spesifik disediakan, lakukan filter periode
+  let candidates = activeCandidates;
+  if (academicYear) {
+    const yearMatch = academicYear.match(/\d{4}/);
+    const startYear = yearMatch ? parseInt(yearMatch[0], 10) : null;
+    if (startYear) {
+      const yearDate = `${startYear}-07-01`;
+      const periodMatched = activeCandidates.filter((cp) => {
+        const from = cp.effectiveFrom || '1970-01-01';
+        const until = cp.effectiveUntil || '9999-12-31';
+        return from <= yearDate && yearDate <= until;
+      });
+      if (periodMatched.length > 0) {
+        candidates = periodMatched;
+      }
+    }
+  }
+
+  if (candidates.length === 1) {
+    return {
+      cp: candidates[0],
+      entry: candidates[0],
+      status: 'RESOLVED',
+      candidates,
+    };
+  }
+
+  if (candidates.length > 1) {
+    return {
+      cp: null,
+      entry: null,
+      status: 'AMBIGUOUS',
+      candidates,
+      reason: `Ditemukan ${candidates.length} Capaian Pembelajaran aktif untuk ${code} Fase ${phase}. Memerlukan spesifikasi tahun ajaran/regulasi lebih spesifik agar tidak menggunakan first-candidate sembarangan.`,
+    };
+  }
+
+  return {
+    cp: null,
+    entry: null,
+    status: 'UNRESOLVED',
+    candidates: [],
+  };
+}
+
+/**
+ * Cari Capaian Pembelajaran resmi berdasarkan mata pelajaran dan fase (serta tahun ajaran jika tersedia).
+ * Mengembalikan undefined jika tidak ditemukan atau jika terdapat ambiguitas (tidak mengembalikan first match sembarangan).
  */
 export function findCPBySubjectAndPhase(
   subjectCodeOrName: string,
   phase: CurriculumPhase,
   academicYear?: string
 ): MasterCPEntry | undefined {
-  const subject =
-    findSubjectByCode(subjectCodeOrName) || findSubjectByNameOrAlias(subjectCodeOrName);
-  const code = subject ? subject.code : subjectCodeOrName.toUpperCase();
-
-  const candidates = ALL_MASTER_CP_ENTRIES.filter(
-    (cp) => cp.subjectCode === code && cp.phase === phase
-  );
-
-  if (candidates.length === 0) return undefined;
-  if (candidates.length === 1) return candidates[0];
-
-  // Jika tahun ajaran spesifik disediakan, lakukan filter periode bila tersedia
-  if (academicYear) {
-    const yearMatch = academicYear.match(/\d{4}/);
-    const startYear = yearMatch ? parseInt(yearMatch[0], 10) : null;
-    if (startYear) {
-      const yearDate = `${startYear}-07-01`;
-      const periodMatched = candidates.filter((cp) => {
-        const from = cp.effectiveFrom || '1970-01-01';
-        const until = cp.effectiveUntil || '9999-12-31';
-        return from <= yearDate && yearDate <= until;
-      });
-      if (periodMatched.length > 0) return periodMatched[0];
-    }
-  }
-
-  // Prioritaskan non-superseded
-  const nonSuperseded = candidates.filter((c) => c.verificationStatus !== 'SUPERSEDED');
-  if (nonSuperseded.length > 0) return nonSuperseded[0];
-
-  return candidates[0];
+  const res = resolveCPContext(subjectCodeOrName, phase, academicYear);
+  return res.status === 'RESOLVED' && res.cp ? res.cp : undefined;
 }
 
 /**
