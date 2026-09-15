@@ -2056,18 +2056,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2097,18 +2099,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2138,18 +2142,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2179,18 +2185,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2220,18 +2228,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2261,18 +2271,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2302,18 +2314,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2343,18 +2357,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2384,18 +2400,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2425,18 +2443,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2466,18 +2486,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2507,18 +2529,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2548,18 +2572,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2589,18 +2615,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2633,18 +2661,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2677,18 +2707,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2721,18 +2753,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2765,18 +2799,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2809,18 +2845,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2850,18 +2888,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 7"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 7"
         }
       }
     ],
@@ -2891,18 +2931,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -2932,18 +2974,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -2973,18 +3017,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3014,18 +3060,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3055,18 +3103,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3096,18 +3146,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3137,18 +3189,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3178,18 +3232,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3219,18 +3275,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3260,18 +3318,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3301,18 +3361,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3342,18 +3404,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3383,18 +3447,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3424,18 +3490,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3468,18 +3536,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3512,18 +3582,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3556,18 +3628,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3600,18 +3674,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3644,18 +3720,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3685,18 +3763,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 8"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 8"
         }
       }
     ],
@@ -3726,18 +3806,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -3767,18 +3849,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -3808,18 +3892,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -3849,18 +3935,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -3890,18 +3978,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -3931,18 +4021,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -3972,18 +4064,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -4013,18 +4107,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -4054,18 +4150,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -4095,18 +4193,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -4136,18 +4236,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -4177,18 +4279,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -4218,18 +4322,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -4259,18 +4365,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -4303,18 +4411,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -4347,18 +4457,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -4391,18 +4503,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -4435,18 +4549,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -4479,18 +4595,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -4520,18 +4638,20 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas 9"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran III",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs",
+          "section": "Kelas 9"
         }
       }
     ],
@@ -4560,10 +4680,11 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "section": "Pasal 33A & Lampiran Struktur Kurikulum",
-          "table": "Mata Pelajaran Pilihan SMP",
+          "attachment": "Lampiran II",
+          "section": "Pasal 32A & Lampiran II Struktur Kurikulum SMP/MTs",
+          "table": "Alokasi Waktu Mata Pelajaran SMP/MTs Kelas VII",
           "note": "Alokasi Koding dan Kecerdasan Artifisial Kelas 7 SMP (2 JP/minggu, 72 JP/tahun)"
         }
       }
@@ -4636,9 +4757,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 7"
         }
       }
@@ -4666,9 +4788,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 7"
         }
       }
@@ -4696,9 +4819,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 7"
         }
       }
@@ -4726,9 +4850,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 7"
         }
       }
@@ -4756,9 +4881,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 7"
         }
       }
@@ -4786,9 +4912,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 7"
         }
       }
@@ -4816,9 +4943,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 7"
         }
       }
@@ -4846,9 +4974,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 7"
         }
       }
@@ -4876,9 +5005,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 7"
         }
       }
@@ -4906,9 +5036,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 7"
         }
       }
@@ -4936,9 +5067,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 7"
         }
       }
@@ -4966,9 +5098,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 8"
         }
       }
@@ -4996,9 +5129,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 8"
         }
       }
@@ -5026,9 +5160,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 8"
         }
       }
@@ -5056,9 +5191,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 8"
         }
       }
@@ -5086,9 +5222,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 8"
         }
       }
@@ -5116,9 +5253,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 8"
         }
       }
@@ -5146,9 +5284,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 8"
         }
       }
@@ -5176,9 +5315,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 8"
         }
       }
@@ -5206,9 +5346,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 8"
         }
       }
@@ -5236,9 +5377,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 8"
         }
       }
@@ -5266,9 +5408,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 8"
         }
       }
@@ -5296,9 +5439,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 9"
         }
       }
@@ -5326,9 +5470,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 9"
         }
       }
@@ -5356,9 +5501,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 9"
         }
       }
@@ -5386,9 +5532,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 9"
         }
       }
@@ -5416,9 +5563,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 9"
         }
       }
@@ -5446,9 +5594,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 9"
         }
       }
@@ -5476,9 +5625,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 9"
         }
       }
@@ -5506,9 +5656,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 9"
         }
       }
@@ -5536,9 +5687,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 9"
         }
       }
@@ -5566,9 +5718,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 9"
         }
       }
@@ -5596,9 +5749,10 @@ export const SMP_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-35-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2180",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMP",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMP/MTs",
           "section": "Alokasi Beban Belajar SMP Kelas 9"
         }
       }

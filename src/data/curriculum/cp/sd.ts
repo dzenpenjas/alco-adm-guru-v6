@@ -7,12 +7,63 @@ import { MasterCPEntry } from './types';
 export const SD_CP_ENTRIES: MasterCPEntry[] = [
   // --- FASE A (KELAS 1 & 2 SD) ---
   {
-    id: 'cp-sd-fase-a-pjok',
+    id: 'cp25-sd-fase-a-pjok',
+    subjectCode: 'PJOK',
+    phase: 'A',
+    level: 'SD',
+    regulationSourceId: 'DEC-BSKAP-046-2025',
+    effectiveFrom: '2025-07-01',
+    implementationFromAcademicYear: '2025/2026',
+    verificationStatus: 'VERIFIED',
+    notes: 'CP PJOK Fase A diverifikasi langsung terhadap Keputusan Kepala BSKAP No. 046/H/KR/2025.',
+    evidence: [
+      {
+        regulationId: 'DEC-BSKAP-046-2025',
+        sourceUrl: 'https://kurikulum.kemdikbud.go.id/unduhan/keputusan-kepala-bskap-nomor-046-h-kr-2025',
+        locator: {
+          attachment: 'Lampiran Capaian Pembelajaran PJOK',
+          section: 'Fase A (Kelas I dan II SD/MI)',
+          table: 'Elemen dan Deskripsi Capaian Pembelajaran PJOK Fase A',
+        },
+      },
+    ],
+    generalDescription:
+      'Pada akhir Fase A, peserta didik menguasai keterampilan gerak fundamental (lokomotor, non-lokomotor, dan manipulatif) melalui eksplorasi berbagai aktivitas jasmani dan permainan sederhana, menerapkan konsep gerak secara sadar dan aman, berpartisipasi aktif dalam kegiatan fisik, serta membiasakan pola hidup sehat.',
+    elements: [
+      {
+        name: 'Terampil Bergerak',
+        content:
+          'Peserta didik mempraktikkan keterampilan gerak fundamental (lokomotor, non-lokomotor, dan manipulatif) dalam berbagai situasi gerak dan permainan sederhana yang menyenangkan.',
+      },
+      {
+        name: 'Belajar melalui Gerak',
+        content:
+          'Peserta didik menerapkan konsep dan strategi gerak serta menunjukkan perilaku fair play, kerja sama, dan menghormati aturan saat beraktivitas jasmani.',
+      },
+      {
+        name: 'Bergaya Hidup Aktif',
+        content:
+          'Peserta didik berpartisipasi secara aktif dalam kegiatan jasmani harian dan mengenali pentingnya aktivitas fisik untuk kebugaran tubuh.',
+      },
+      {
+        name: 'Memilih Hidup yang Menyehatkan',
+        content:
+          'Peserta didik mengenali dan menerapkan kebiasaan hidup sehat, menjaga kebersihan diri, serta mengenali bagian tubuh pribadi yang harus dijaga.',
+      },
+    ],
+  },
+  {
+    id: 'cp24-sd-fase-a-pjok',
     subjectCode: 'PJOK',
     phase: 'A',
     level: 'SD',
     regulationSourceId: 'DEC-BSKAP-032-2024',
-    verificationStatus: 'UNVERIFIED',
+    effectiveFrom: '2024-06-11',
+    effectiveUntil: '2025-06-30',
+    implementationFromAcademicYear: '2024/2025',
+    verificationStatus: 'SUPERSEDED',
+    notes:
+      'CP PJOK Fase A TA 2024/2025 rujukan Keputusan Kepala BSKAP No. 032/H/KR/2024 (telah digantikan oleh Keputusan Kepala BSKAP No. 046/H/KR/2025 untuk TA 2025/2026).',
     generalDescription:
       'Pada akhir Fase A, peserta didik dapat menunjukkan berbagai aktivitas pola gerak dasar lokomotor, non-lokomotor, dan manipulatif sebagai hasil peniruan dari berbagai sumber. Peserta didik mengetahui prosedur pola gerak dasar, menjaga kebersihan dan kesehatan diri, serta menunjukkan perilaku bertanggung jawab, mandiri, dan menghargai orang lain.',
     elements: [

@@ -2885,18 +2885,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -2926,18 +2928,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -2967,18 +2971,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3008,18 +3014,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3049,18 +3057,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3090,18 +3100,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3132,18 +3144,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3174,18 +3188,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3215,18 +3231,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3256,18 +3274,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3297,18 +3317,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3338,18 +3360,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3379,18 +3403,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3420,18 +3446,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3461,18 +3489,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3502,18 +3532,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3543,18 +3575,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3584,18 +3618,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3625,18 +3661,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3670,18 +3708,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3715,18 +3755,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3760,18 +3802,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3805,18 +3849,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3846,18 +3892,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 10"
         }
       }
     ],
@@ -3886,10 +3934,11 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "section": "Pasal 33A & Lampiran Struktur Kurikulum",
-          "table": "Mata Pelajaran Pilihan SMA",
+          "attachment": "Lampiran II",
+          "section": "Pasal 32A & Lampiran II Struktur Kurikulum SMA/MA",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA Kelas X",
           "note": "Alokasi Koding dan Kecerdasan Artifisial Kelas 10 SMA (2 JP/minggu, 72 JP/tahun)"
         }
       }
@@ -3920,18 +3969,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -3961,18 +4012,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4002,18 +4055,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4043,18 +4098,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4084,18 +4141,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4125,18 +4184,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4167,18 +4228,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4208,18 +4271,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4249,18 +4314,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4290,18 +4357,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4331,18 +4400,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4372,18 +4443,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4417,18 +4490,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4462,18 +4537,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4507,18 +4584,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4552,18 +4631,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4593,18 +4674,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4638,18 +4721,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4683,18 +4768,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4728,18 +4815,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4773,18 +4862,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4818,18 +4909,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4863,18 +4956,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4908,18 +5003,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4953,18 +5050,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -4998,18 +5097,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -5043,18 +5144,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -5088,18 +5191,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -5133,18 +5238,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 11"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 11"
         }
       }
     ],
@@ -5196,18 +5303,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5237,18 +5346,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5278,18 +5389,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5319,18 +5432,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5360,18 +5475,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5401,18 +5518,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5443,18 +5562,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5484,18 +5605,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5525,18 +5648,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5566,18 +5691,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5607,18 +5734,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5648,18 +5777,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5693,18 +5824,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5738,18 +5871,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5783,18 +5918,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5828,18 +5965,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5869,18 +6008,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5914,18 +6055,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -5959,18 +6102,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -6004,18 +6149,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -6049,18 +6196,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -6094,18 +6243,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -6139,18 +6290,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -6184,18 +6337,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -6229,18 +6384,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -6274,18 +6431,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -6319,18 +6478,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -6364,18 +6525,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -6409,18 +6572,20 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKDASMEN-13-2025",
-        "sourceUrl": "https://jdih.kemdikdasmen.go.id/",
+        "sourceUrl": "https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025",
         "locator": {
-          "attachment": "Lampiran Perubahan Struktur Kurikulum",
-          "section": "Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 12"
+          "attachment": "Lampiran II",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       },
       {
         "regulationId": "REG-PERMENDIKBUDRISTEK-12-2024",
         "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=3299",
         "locator": {
-          "attachment": "Lampiran Ketetapan Pokok",
-          "section": "Alokasi Waktu Dasar Kurikulum Merdeka"
+          "attachment": "Lampiran IV",
+          "table": "Alokasi Waktu Mata Pelajaran SMA/MA",
+          "section": "Kelas 12"
         }
       }
     ],
@@ -6470,9 +6635,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 10"
         }
       }
@@ -6500,9 +6666,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 10"
         }
       }
@@ -6530,9 +6697,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 10"
         }
       }
@@ -6560,9 +6728,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 10"
         }
       }
@@ -6590,9 +6759,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 10"
         }
       }
@@ -6620,9 +6790,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 10"
         }
       }
@@ -6650,9 +6821,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 10"
         }
       }
@@ -6680,9 +6852,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 10"
         }
       }
@@ -6710,9 +6883,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 10"
         }
       }
@@ -6740,9 +6914,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 10"
         }
       }
@@ -6770,9 +6945,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 11"
         }
       }
@@ -6800,9 +6976,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 11"
         }
       }
@@ -6830,9 +7007,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 11"
         }
       }
@@ -6860,9 +7038,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 11"
         }
       }
@@ -6890,9 +7069,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 11"
         }
       }
@@ -6920,9 +7100,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 11"
         }
       }
@@ -6950,9 +7131,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 11"
         }
       }
@@ -6980,9 +7162,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 11"
         }
       }
@@ -7010,9 +7193,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 11"
         }
       }
@@ -7040,9 +7224,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 11"
         }
       }
@@ -7070,9 +7255,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 12"
         }
       }
@@ -7100,9 +7286,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 12"
         }
       }
@@ -7130,9 +7317,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 12"
         }
       }
@@ -7160,9 +7348,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 12"
         }
       }
@@ -7190,9 +7379,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 12"
         }
       }
@@ -7220,9 +7410,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 12"
         }
       }
@@ -7250,9 +7441,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 12"
         }
       }
@@ -7280,9 +7472,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 12"
         }
       }
@@ -7310,9 +7503,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 12"
         }
       }
@@ -7340,9 +7534,10 @@ export const SMA_STRUCTURE_RULES: CurriculumStructureRule[] = [
     evidence: [
       {
         "regulationId": "REG-PERMENDIKBUD-36-2018",
-        "sourceUrl": "https://jdih.kemdikbud.go.id/",
+        "sourceUrl": "https://jdih.kemdikbud.go.id/detail_peraturan?main=2181",
         "locator": {
-          "attachment": "Lampiran Struktur Kurikulum 2013 SMA",
+          "attachment": "Lampiran",
+          "table": "Struktur Kurikulum SMA/MA",
           "section": "Alokasi Beban Belajar SMA Kelas 12"
         }
       }

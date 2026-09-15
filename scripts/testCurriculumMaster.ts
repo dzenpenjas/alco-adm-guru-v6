@@ -540,14 +540,22 @@ async function runCurriculumMasterTests() {
     'Panduan Pembelajaran dan Asesmen 2025 terdaftar di Regulation Registry'
   );
 
-  // Verifikasi status CP yang belum dikomparasi dengan BSKAP 046/2025 adalah UNVERIFIED
+  // Verifikasi status CP terhadap BSKAP 046/2025
   const allCPs = [...SD_CP_ENTRIES, ...SMP_CP_ENTRIES, ...SMA_CP_ENTRIES];
-  const verifiedWithout2025 = allCPs.filter(
+  const verifiedCPs = allCPs.filter(
     (cp) => cp.verificationStatus === 'VERIFIED'
   );
   assert(
-    verifiedWithout2025.length === 0,
-    'Semua CP yang belum diverifikasi penuh terhadap BSKAP No. 046/H/KR/2025 berstatus UNVERIFIED secara jujur'
+    verifiedCPs.length > 0 &&
+      verifiedCPs.every((cp) => cp.regulationSourceId === 'DEC-BSKAP-046-2025'),
+    'Hanya CP yang diverifikasi langsung terhadap BSKAP No. 046/H/KR/2025 yang berstatus VERIFIED'
+  );
+  const unverifiedCPs = allCPs.filter(
+    (cp) => cp.verificationStatus === 'UNVERIFIED'
+  );
+  assert(
+    unverifiedCPs.length > 0,
+    'CP yang belum diverifikasi terhadap naskah 046/2025 tetap berstatus UNVERIFIED secara jujur'
   );
 
   // TEST 15: validateCurriculumMaster() Entry Point
@@ -760,8 +768,8 @@ async function runCurriculumMasterTests() {
     level: 'SD',
   });
   assert(
-    cpResolved.status === 'RESOLVED' && cpResolved.entry?.id === 'cp-sd-fase-a-pjok',
-    'resolveCPContext menyelesaikan CP PJOK Fase A dengan status RESOLVED'
+    cpResolved.status === 'RESOLVED' && cpResolved.entry?.id === 'cp25-sd-fase-a-pjok',
+    'resolveCPContext menyelesaikan CP PJOK Fase A dengan status RESOLVED ke entri aktif 2025'
   );
 
   const cpUnresolved = resolveCPContext({
@@ -785,6 +793,167 @@ async function runCurriculumMasterTests() {
   assert(
     rulesMissingEvidence.length === 0,
     `Semua ${verifiedActiveRules.length} aturan VERIFIED memiliki bukti resmi (evidence) terdaftar tanpa celah`
+  );
+
+  // TEST 26: Evidence Validation Integrity (No Evidence vs Homepage vs Specific)
+  console.log('\n--- 26. Evidence Validation Integrity ---');
+  const ruleWithHomepageUrl: any = {
+    id: 'test-homepage-url',
+    curriculumType: 'KURIKULUM_MERDEKA',
+    level: 'SD',
+    grade: 1,
+    phase: 'A',
+    subjectCode: 'BINDO',
+    intrakurikulerAnnualJP: 216,
+    kokurikulerAnnualJP: 72,
+    totalAnnualJP: 288,
+    referenceWeeksPerYear: 36,
+    minutesPerJP: 35,
+    derivedWeeklyJP: 6,
+    regulationIds: ['REG-PERMENDIKDASMEN-13-2025'],
+    verificationStatus: 'VERIFIED',
+    evidence: [
+      {
+        regulationId: 'REG-PERMENDIKDASMEN-13-2025',
+        sourceUrl: 'https://jdih.kemdikdasmen.go.id/', // Homepage only -> INVALID
+        locator: {
+          attachment: 'Lampiran II',
+          table: 'Alokasi Waktu Mata Pelajaran SD/MI',
+          section: 'Kelas 1',
+        },
+      },
+    ],
+  };
+  const homepageRes = validateStructureRule(ruleWithHomepageUrl);
+  assert(
+    homepageRes.isValid === false &&
+      homepageRes.issues.some((i) => i.field === 'evidence' && i.message.includes('terlalu generik')),
+    'VERIFIED rule dengan homepage-only evidence → FAIL (ditolak oleh validator)'
+  );
+
+  const ruleWithSpecificUrl: any = {
+    id: 'test-specific-url',
+    curriculumType: 'KURIKULUM_MERDEKA',
+    level: 'SD',
+    grade: 1,
+    phase: 'A',
+    subjectCode: 'BINDO',
+    intrakurikulerAnnualJP: 216,
+    kokurikulerAnnualJP: 72,
+    totalAnnualJP: 288,
+    referenceWeeksPerYear: 36,
+    minutesPerJP: 35,
+    derivedWeeklyJP: 6,
+    regulationIds: ['REG-PERMENDIKDASMEN-13-2025'],
+    verificationStatus: 'VERIFIED',
+    evidence: [
+      {
+        regulationId: 'REG-PERMENDIKDASMEN-13-2025',
+        sourceUrl: 'https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025',
+        locator: {
+          attachment: 'Lampiran II',
+          table: 'Alokasi Waktu Mata Pelajaran SD/MI',
+          section: 'Kelas 1',
+        },
+      },
+    ],
+  };
+  const specificRes = validateStructureRule(ruleWithSpecificUrl);
+  assert(
+    specificRes.isValid === true && specificRes.issues.length === 0,
+    'VERIFIED rule dengan specific official evidence → PASS (diterima oleh validator)'
+  );
+
+  // TEST 27: CP Current 2025/2026 vs Historical 2024/2025 Separation
+  console.log('\n--- 27. CP Current 2025/2026 vs Historical 2024/2025 Separation ---');
+  const cp2025 = resolveCPContext({
+    subjectCode: 'PJOK',
+    phase: 'A',
+    level: 'SD',
+    academicYear: '2025/2026',
+  });
+  assert(
+    cp2025.status === 'RESOLVED' &&
+      cp2025.entry?.regulationSourceId === 'DEC-BSKAP-046-2025' &&
+      cp2025.entry?.id === 'cp25-sd-fase-a-pjok',
+    'CP current 2025/2026 menggunakan source DEC-BSKAP-046-2025'
+  );
+  assert(
+    cp2025.entry?.elements.some((e) => e.name === 'Terampil Bergerak') &&
+      cp2025.entry?.elements.some((e) => e.name === 'Belajar melalui Gerak') &&
+      cp2025.entry?.elements.some((e) => e.name === 'Bergaya Hidup Aktif') &&
+      cp2025.entry?.elements.some((e) => e.name === 'Memilih Hidup yang Menyehatkan'),
+    'CP current PJOK Fase A memiliki elemen terverifikasi sesuai BSKAP 046/2025'
+  );
+
+  const cp2024 = resolveCPContext({
+    subjectCode: 'PJOK',
+    phase: 'A',
+    level: 'SD',
+    academicYear: '2024/2025',
+  });
+  assert(
+    cp2024.status === 'RESOLVED' &&
+      cp2024.entry?.regulationSourceId === 'DEC-BSKAP-032-2024' &&
+      cp2024.entry?.id === 'cp24-sd-fase-a-pjok',
+    'CP historical 2024/2025 menggunakan source DEC-BSKAP-032-2024 dan tidak tertukar dengan current'
+  );
+  assert(
+    cp2024.entry?.elements.some((e) => e.name === 'Keterampilan Gerak') &&
+      cp2024.entry?.elements.some((e) => e.name === 'Pengetahuan Gerak'),
+    'CP historical 2024/2025 mempertahankan rumusan elemen historis BSKAP 032/2024'
+  );
+
+  // TEST 28: CP Ambiguity Safety (Multiple Active Candidates)
+  console.log('\n--- 28. CP Ambiguity Safety ---');
+  const mockPool: any[] = [
+    {
+      id: 'cp-mock-a',
+      subjectCode: 'IPA',
+      phase: 'D',
+      level: 'SMP',
+      regulationSourceId: 'DEC-BSKAP-046-2025',
+      verificationStatus: 'VERIFIED',
+      generalDescription: 'Varian A',
+      elements: [],
+      effectiveFrom: '2025-07-01',
+    },
+    {
+      id: 'cp-mock-b',
+      subjectCode: 'IPA',
+      phase: 'D',
+      level: 'SMP',
+      regulationSourceId: 'DEC-BSKAP-046-2025',
+      verificationStatus: 'VERIFIED',
+      generalDescription: 'Varian B',
+      elements: [],
+      effectiveFrom: '2025-07-01',
+    },
+  ];
+  const ambiguousCpRes = resolveCPContext({
+    subjectCode: 'IPA',
+    phase: 'D',
+    level: 'SMP',
+    academicYear: '2025/2026',
+    entriesPool: mockPool,
+  });
+  assert(
+    ambiguousCpRes.status === 'AMBIGUOUS' &&
+      ambiguousCpRes.cp === null &&
+      ambiguousCpRes.candidates?.length === 2,
+    'Jika terdapat > 1 kandidat CP aktif tanpa pembeda, sistem mengembalikan AMBIGUOUS tanpa memilih diam-diam'
+  );
+
+  // TEST 29: CP Unknown / Unresolved Safety
+  console.log('\n--- 29. CP Unknown / Unresolved Safety ---');
+  const unknownCpRes = resolveCPContext({
+    subjectCode: 'MAPEL_TIDAK_DIKENAL',
+    phase: 'A',
+    level: 'SD',
+  });
+  assert(
+    unknownCpRes.status === 'UNRESOLVED' && unknownCpRes.cp === null,
+    'Mapel tidak dikenal menghasilkan status UNRESOLVED dengan cp: null'
   );
 
   console.log('\n===========================================================');

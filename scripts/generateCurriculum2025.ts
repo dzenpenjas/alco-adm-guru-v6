@@ -269,18 +269,20 @@ function generateSD(): string {
     const baseEvidence25 = [
       {
         regulationId: 'REG-PERMENDIKDASMEN-13-2025',
-        sourceUrl: 'https://jdih.kemdikdasmen.go.id/',
+        sourceUrl: 'https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025',
         locator: {
-          attachment: 'Lampiran Perubahan Struktur Kurikulum',
-          section: `Alokasi Waktu Intrakurikuler dan Kokurikuler SD Kelas ${grade}`,
+          attachment: 'Lampiran II',
+          table: 'Alokasi Waktu Mata Pelajaran SD/MI',
+          section: `Kelas ${grade}`,
         },
       },
       {
         regulationId: 'REG-PERMENDIKBUDRISTEK-12-2024',
         sourceUrl: 'https://jdih.kemdikbud.go.id/detail_peraturan?main=3299',
         locator: {
-          attachment: 'Lampiran Ketetapan Pokok',
-          section: 'Alokasi Waktu Dasar Kurikulum Merdeka',
+          attachment: 'Lampiran II',
+          table: 'Alokasi Waktu Mata Pelajaran SD/MI',
+          section: `Kelas ${grade}`,
         },
       },
     ];
@@ -525,10 +527,11 @@ function generateSD(): string {
     evidence: [
       {
         regulationId: 'REG-PERMENDIKDASMEN-13-2025',
-        sourceUrl: 'https://jdih.kemdikdasmen.go.id/',
+        sourceUrl: 'https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025',
         locator: {
-          section: 'Pasal 33A & Lampiran Struktur Kurikulum',
-          table: 'Mata Pelajaran Pilihan SD',
+          attachment: 'Lampiran II',
+          section: 'Pasal 32A & Lampiran II Struktur Kurikulum SD/MI',
+          table: 'Alokasi Waktu Mata Pelajaran SD/MI Kelas V',
           note: 'Alokasi Koding dan Kecerdasan Artifisial Kelas 5 SD (2 JP/minggu, 72 JP/tahun)',
         },
       },
@@ -588,9 +591,10 @@ function generateSD(): string {
     const k13Evidence = [
       {
         regulationId: 'REG-PERMENDIKBUD-37-2018',
-        sourceUrl: 'https://jdih.kemdikbud.go.id/',
+        sourceUrl: 'https://jdih.kemdikbud.go.id/detail_peraturan?main=2178',
         locator: {
-          attachment: 'Lampiran Struktur Kurikulum 2013',
+          attachment: 'Lampiran',
+          table: 'Struktur Kurikulum SD/MI',
           section: `Beban Belajar dan KI-KD SD Kelas ${grade}`,
         },
       },
@@ -792,18 +796,20 @@ function generateSMP(): string {
     const baseEvidence25 = [
       {
         regulationId: 'REG-PERMENDIKDASMEN-13-2025',
-        sourceUrl: 'https://jdih.kemdikdasmen.go.id/',
+        sourceUrl: 'https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025',
         locator: {
-          attachment: 'Lampiran Perubahan Struktur Kurikulum',
-          section: `Alokasi Waktu Intrakurikuler dan Kokurikuler SMP Kelas ${grade}`,
+          attachment: 'Lampiran II',
+          table: 'Alokasi Waktu Mata Pelajaran SMP/MTs',
+          section: `Kelas ${grade}`,
         },
       },
       {
         regulationId: 'REG-PERMENDIKBUDRISTEK-12-2024',
         sourceUrl: 'https://jdih.kemdikbud.go.id/detail_peraturan?main=3299',
         locator: {
-          attachment: 'Lampiran Ketetapan Pokok',
-          section: 'Alokasi Waktu Dasar Kurikulum Merdeka',
+          attachment: 'Lampiran III',
+          table: 'Alokasi Waktu Mata Pelajaran SMP/MTs',
+          section: `Kelas ${grade}`,
         },
       },
     ];
@@ -930,10 +936,11 @@ function generateSMP(): string {
     evidence: [
       {
         regulationId: 'REG-PERMENDIKDASMEN-13-2025',
-        sourceUrl: 'https://jdih.kemdikdasmen.go.id/',
+        sourceUrl: 'https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025',
         locator: {
-          section: 'Pasal 33A & Lampiran Struktur Kurikulum',
-          table: 'Mata Pelajaran Pilihan SMP',
+          attachment: 'Lampiran II',
+          section: 'Pasal 32A & Lampiran II Struktur Kurikulum SMP/MTs',
+          table: 'Alokasi Waktu Mata Pelajaran SMP/MTs Kelas VII',
           note: 'Alokasi Koding dan Kecerdasan Artifisial Kelas 7 SMP (2 JP/minggu, 72 JP/tahun)',
         },
       },
@@ -993,9 +1000,10 @@ function generateSMP(): string {
     const k13Evidence = [
       {
         regulationId: 'REG-PERMENDIKBUD-35-2018',
-        sourceUrl: 'https://jdih.kemdikbud.go.id/',
+        sourceUrl: 'https://jdih.kemdikbud.go.id/detail_peraturan?main=2180',
         locator: {
-          attachment: 'Lampiran Struktur Kurikulum 2013 SMP',
+          attachment: 'Lampiran',
+          table: 'Struktur Kurikulum SMP/MTs',
           section: `Alokasi Beban Belajar SMP Kelas ${grade}`,
         },
       },
@@ -1438,18 +1446,20 @@ function generateSMA(): string {
     const baseEvidence25 = [
       {
         regulationId: 'REG-PERMENDIKDASMEN-13-2025',
-        sourceUrl: 'https://jdih.kemdikdasmen.go.id/',
+        sourceUrl: 'https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025',
         locator: {
-          attachment: 'Lampiran Perubahan Struktur Kurikulum',
-          section: 'Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas 10',
+          attachment: 'Lampiran II',
+          table: 'Alokasi Waktu Mata Pelajaran SMA/MA',
+          section: 'Kelas 10',
         },
       },
       {
         regulationId: 'REG-PERMENDIKBUDRISTEK-12-2024',
         sourceUrl: 'https://jdih.kemdikbud.go.id/detail_peraturan?main=3299',
         locator: {
-          attachment: 'Lampiran Ketetapan Pokok',
-          section: 'Alokasi Waktu Dasar Kurikulum Merdeka',
+          attachment: 'Lampiran IV',
+          table: 'Alokasi Waktu Mata Pelajaran SMA/MA',
+          section: 'Kelas 10',
         },
       },
     ];
@@ -1631,10 +1641,11 @@ function generateSMA(): string {
       evidence: [
         {
           regulationId: 'REG-PERMENDIKDASMEN-13-2025',
-          sourceUrl: 'https://jdih.kemdikdasmen.go.id/',
+          sourceUrl: 'https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025',
           locator: {
-            section: 'Pasal 33A & Lampiran Struktur Kurikulum',
-            table: 'Mata Pelajaran Pilihan SMA',
+            attachment: 'Lampiran II',
+            section: 'Pasal 32A & Lampiran II Struktur Kurikulum SMA/MA',
+            table: 'Alokasi Waktu Mata Pelajaran SMA/MA Kelas X',
             note: 'Alokasi Koding dan Kecerdasan Artifisial Kelas 10 SMA (2 JP/minggu, 72 JP/tahun)',
           },
         },
@@ -1653,18 +1664,20 @@ function generateSMA(): string {
     const baseEvidence25 = [
       {
         regulationId: 'REG-PERMENDIKDASMEN-13-2025',
-        sourceUrl: 'https://jdih.kemdikdasmen.go.id/',
+        sourceUrl: 'https://jdih.kemdikdasmen.go.id/detail_peraturan?main=13-2025',
         locator: {
-          attachment: 'Lampiran Perubahan Struktur Kurikulum',
-          section: `Alokasi Waktu Intrakurikuler dan Kokurikuler SMA Kelas ${grade}`,
+          attachment: 'Lampiran II',
+          table: 'Alokasi Waktu Mata Pelajaran SMA/MA',
+          section: `Kelas ${grade}`,
         },
       },
       {
         regulationId: 'REG-PERMENDIKBUDRISTEK-12-2024',
         sourceUrl: 'https://jdih.kemdikbud.go.id/detail_peraturan?main=3299',
         locator: {
-          attachment: 'Lampiran Ketetapan Pokok',
-          section: 'Alokasi Waktu Dasar Kurikulum Merdeka',
+          attachment: 'Lampiran IV',
+          table: 'Alokasi Waktu Mata Pelajaran SMA/MA',
+          section: `Kelas ${grade}`,
         },
       },
     ];
@@ -1860,9 +1873,10 @@ function generateSMA(): string {
     const k13Evidence = [
       {
         regulationId: 'REG-PERMENDIKBUD-36-2018',
-        sourceUrl: 'https://jdih.kemdikbud.go.id/',
+        sourceUrl: 'https://jdih.kemdikbud.go.id/detail_peraturan?main=2181',
         locator: {
-          attachment: 'Lampiran Struktur Kurikulum 2013 SMA',
+          attachment: 'Lampiran',
+          table: 'Struktur Kurikulum SMA/MA',
           section: `Alokasi Beban Belajar SMA Kelas ${grade}`,
         },
       },

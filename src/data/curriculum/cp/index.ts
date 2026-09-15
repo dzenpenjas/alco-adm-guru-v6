@@ -23,6 +23,7 @@ export interface ResolveCPOptions {
   phase: CurriculumPhase;
   academicYear?: string;
   level?: SchoolLevel;
+  entriesPool?: MasterCPEntry[];
 }
 
 export interface CPResolutionResult {
@@ -47,6 +48,7 @@ export function resolveCPContext(
   let phase: CurriculumPhase;
   let academicYear: string | undefined;
   let levelFilter: SchoolLevel | undefined;
+  let sourcePool = ALL_MASTER_CP_ENTRIES;
 
   if (typeof subjectOrOptions === 'object' && subjectOrOptions !== null) {
     subjectInput =
@@ -57,6 +59,9 @@ export function resolveCPContext(
     phase = subjectOrOptions.phase;
     academicYear = subjectOrOptions.academicYear;
     levelFilter = subjectOrOptions.level;
+    if (subjectOrOptions.entriesPool) {
+      sourcePool = subjectOrOptions.entriesPool;
+    }
   } else {
     subjectInput = typeof subjectOrOptions === 'string' ? subjectOrOptions : '';
     phase = phaseArg!;
@@ -77,7 +82,7 @@ export function resolveCPContext(
     findSubjectByCode(subjectInput) || findSubjectByNameOrAlias(subjectInput);
   const code = subject ? subject.code : subjectInput.toUpperCase().trim();
 
-  let baseCandidates = ALL_MASTER_CP_ENTRIES.filter(
+  let baseCandidates = sourcePool.filter(
     (cp) => cp.subjectCode === code && cp.phase === phase
   );
 
@@ -95,34 +100,29 @@ export function resolveCPContext(
     };
   }
 
-  // Filter kandidat yang non-superseded
-  const activeCandidates = baseCandidates.filter((c) => c.verificationStatus !== 'SUPERSEDED');
-  if (activeCandidates.length === 0) {
-    return {
-      cp: null,
-      entry: null,
-      status: 'UNRESOLVED',
-      candidates: [],
-      reason: `Semua Capaian Pembelajaran untuk ${code} Fase ${phase} telah berstatus SUPERSEDED.`,
-    };
-  }
+  let candidates: MasterCPEntry[] = [];
 
-  // Jika tahun ajaran spesifik disediakan, lakukan filter periode
-  let candidates = activeCandidates;
   if (academicYear) {
     const yearMatch = academicYear.match(/\d{4}/);
     const startYear = yearMatch ? parseInt(yearMatch[0], 10) : null;
     if (startYear) {
       const yearDate = `${startYear}-07-01`;
-      const periodMatched = activeCandidates.filter((cp) => {
+      candidates = baseCandidates.filter((cp) => {
+        if (cp.implementationFromAcademicYear && cp.implementationFromAcademicYear === academicYear) {
+          return true;
+        }
         const from = cp.effectiveFrom || '1970-01-01';
         const until = cp.effectiveUntil || '9999-12-31';
         return from <= yearDate && yearDate <= until;
       });
-      if (periodMatched.length > 0) {
-        candidates = periodMatched;
-      }
     }
+  } else {
+    // Tanpa filter tahun ajaran spesifik: hanya ambil kandidat yang aktif saat ini (tidak superseded dan tidak kedaluwarsa)
+    candidates = baseCandidates.filter((c) => {
+      if (c.verificationStatus === 'SUPERSEDED') return false;
+      if (c.effectiveUntil && c.effectiveUntil < '2025-07-01') return false;
+      return true;
+    });
   }
 
   if (candidates.length === 1) {
@@ -149,6 +149,7 @@ export function resolveCPContext(
     entry: null,
     status: 'UNRESOLVED',
     candidates: [],
+    reason: `Tidak ditemukan Capaian Pembelajaran untuk ${code} Fase ${phase}${academicYear ? ` pada TA ${academicYear}` : ''}.`,
   };
 }
 

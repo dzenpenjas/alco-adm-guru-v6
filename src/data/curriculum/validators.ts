@@ -11,6 +11,49 @@ export interface ValidationResult {
 const REGULATION_ID_SET = new Set(OFFICIAL_REGULATION_SOURCES.map((r) => r.id));
 
 /**
+ * Memeriksa apakah URL rujukan merupakan URL dokumen regulasi resmi spesifik,
+ * dan bukan sekadar menunjuk ke generic homepage / domain root portal.
+ */
+export function isSpecificOfficialSourceUrl(url: string): boolean {
+  if (!url || typeof url !== 'string') return false;
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+      return false;
+    }
+    const cleanPath = parsed.pathname.replace(/\/+$/, '').trim();
+    // Jika tidak ada path spesifik dan tidak ada query string, itu hanya homepage/root
+    if (!cleanPath && !parsed.search) {
+      return false;
+    }
+    if (cleanPath === '' || cleanPath === '/') {
+      return false;
+    }
+    const genericPaths = ['/home', '/index', '/index.html', '/index.php', '/beranda'];
+    if (genericPaths.includes(cleanPath.toLowerCase()) && !parsed.search) {
+      return false;
+    }
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Memeriksa apakah locator memiliki detail rujukan spesifik yang memadai
+ * (misal: attachment/lampiran, table/tabel, section/pasal, atau nomor halaman).
+ */
+export function hasSpecificLocatorDetails(locator: any): boolean {
+  if (!locator || typeof locator !== 'object') return false;
+  const hasAttachment = typeof locator.attachment === 'string' && locator.attachment.trim().length > 0;
+  const hasTable = typeof locator.table === 'string' && locator.table.trim().length > 0;
+  const hasSection = typeof locator.section === 'string' && locator.section.trim().length > 0;
+  const hasPage = typeof locator.page === 'number' && locator.page > 0;
+  const hasArticle = typeof locator.article === 'string' && locator.article.trim().length > 0;
+  return Boolean(hasAttachment || hasTable || hasSection || hasPage || hasArticle);
+}
+
+/**
  * Memvalidasi konsistensi internal dari sebuah CurriculumStructureRule
  */
 export function validateStructureRule(rule: CurriculumStructureRule): ValidationResult {
@@ -129,6 +172,22 @@ export function validateStructureRule(rule: CurriculumStructureRule): Validation
             ruleId: rule.id,
             field: 'evidence',
             message: `Evidence harus menyertakan sourceUrl resmi yang valid.`,
+            severity: 'ERROR',
+          });
+        } else if (!isSpecificOfficialSourceUrl(ev.sourceUrl)) {
+          issues.push({
+            ruleId: rule.id,
+            field: 'evidence',
+            message: `Evidence sourceUrl '${ev.sourceUrl}' terlalu generik (hanya root/homepage). Aturan VERIFIED wajib menggunakan URL dokumen regulasi resmi yang spesifik.`,
+            severity: 'ERROR',
+          });
+        }
+
+        if (!hasSpecificLocatorDetails(ev.locator)) {
+          issues.push({
+            ruleId: rule.id,
+            field: 'evidence',
+            message: `Evidence locator untuk aturan VERIFIED harus memiliki rujukan spesifik (attachment, table, section, atau page).`,
             severity: 'ERROR',
           });
         }
