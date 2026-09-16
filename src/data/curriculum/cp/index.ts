@@ -108,19 +108,28 @@ export function resolveCPContext(
     if (startYear) {
       const yearDate = `${startYear}-07-01`;
       candidates = baseCandidates.filter((cp) => {
-        if (cp.implementationFromAcademicYear && cp.implementationFromAcademicYear === academicYear) {
-          return true;
-        }
         const from = cp.effectiveFrom || '1970-01-01';
         const until = cp.effectiveUntil || '9999-12-31';
-        return from <= yearDate && yearDate <= until;
+
+        // 1. Cek kesesuaian rentang tanggal berlaku
+        const inDateRange = from <= yearDate && yearDate <= until;
+        if (inDateRange) {
+          return true;
+        }
+
+        // 2. Jika tidak ada batasan tanggal eksplisit, gunakan implementationFromAcademicYear
+        if (!cp.effectiveFrom && !cp.effectiveUntil && cp.implementationFromAcademicYear) {
+          return cp.implementationFromAcademicYear === academicYear;
+        }
+
+        return false;
       });
     }
   } else {
-    // Tanpa filter tahun ajaran spesifik: hanya ambil kandidat yang aktif saat ini (tidak superseded dan tidak kedaluwarsa)
+    // Tanpa filter tahun ajaran spesifik: hanya ambil kandidat yang aktif saat ini (tidak superseded dan belum kedaluwarsa)
     candidates = baseCandidates.filter((c) => {
       if (c.verificationStatus === 'SUPERSEDED') return false;
-      if (c.effectiveUntil && c.effectiveUntil < '2025-07-01') return false;
+      if (c.effectiveUntil && c.effectiveUntil < '2026-07-01') return false;
       return true;
     });
   }

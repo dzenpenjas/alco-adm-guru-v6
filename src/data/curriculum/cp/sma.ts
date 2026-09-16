@@ -7,6 +7,89 @@ import { MasterCPEntry } from './types';
 export const SMA_CP_ENTRIES: MasterCPEntry[] = [
   // --- FASE E (KELAS 10 SMA) ---
   {
+    id: 'cp25-sma-fase-e-pai',
+    subjectCode: 'PAI',
+    phase: 'E',
+    level: 'SMA',
+    regulationSourceId: 'DEC-BSKAP-046-2025',
+    effectiveFrom: '2025-07-01',
+    effectiveUntil: '2026-06-30',
+    implementationFromAcademicYear: '2025/2026',
+    verificationStatus: 'UNVERIFIED',
+    notes:
+      'CP PAI dan Budi Pekerti SMA Fase E TA 2025/2026 berbasis Keputusan Kepala BSKAP No. 046/H/KR/2025.',
+    generalDescription:
+      'Pada akhir Fase E, peserta didik menganalisis ayat Al-Qur’an dan hadis tentang berpikir kritis dan toleransi, cabang-cabang iman (syu’abul iman), bahaya pergaulan bebas dan minuman keras, fikih muamalah kontemporer, serta peran tokoh Islam di Indonesia.',
+    elements: [
+      {
+        name: 'Al-Qur’an dan Hadis',
+        content:
+          'Peserta didik menganalisis ayat Al-Qur’an dan hadis tentang perintah berpikir kritis, toleransi beragama, dan memelihara kehidupan manusia.',
+      },
+      {
+        name: 'Akidah',
+        content:
+          'Peserta didik menganalisis cabang-cabang iman (syu’abul iman), keterkaitan antara iman, Islam, dan ihsan dalam kehidupan bermasyarakat.',
+      },
+      {
+        name: 'Akhlak',
+        content:
+          'Peserta didik menghindari akhlak mazmumah (pergaulan bebas, narkoba, judi online) dan membiasakan akhlak mahmudah.',
+      },
+      {
+        name: 'Fikih',
+        content:
+          'Peserta didik menganalisis ketentuan fikih muamalah: asuransi syariah, perbankan syariah, dan koperasi syariah.',
+      },
+      {
+        name: 'Sejarah Peradaban Islam',
+        content:
+          'Peserta didik menganalisis sejarah dan peran ulama penyebar Islam (Wali Songo) serta kontribusi kerajaan Islam di Nusantara.',
+      },
+    ],
+  },
+  {
+    id: 'cp26-sma-fase-e-pai',
+    subjectCode: 'PAI',
+    phase: 'E',
+    level: 'SMA',
+    regulationSourceId: 'DEC-BKPDM-020-2026',
+    effectiveFrom: '2026-07-01',
+    implementationFromAcademicYear: '2026/2027',
+    verificationStatus: 'UNVERIFIED',
+    notes:
+      'Capaian Pembelajaran PAI dan Budi Pekerti SMA Fase E berdasarkan Keputusan Kepala BKPDM Nomor 020 Tahun 2026.',
+    generalDescription:
+      'Pada akhir Fase E, peserta didik mampu menganalisis pesan Al-Qur’an dan hadis tentang integritas, berpikir kritis, moderasi beragama, cabang-cabang iman, fikih kontemporer, serta keteladanan tokoh peradaban Islam di Indonesia.',
+    elements: [
+      {
+        name: 'Al-Qur’an dan Hadis',
+        content:
+          'Peserta didik menganalisis ayat Al-Qur’an dan hadis tentang etika berpikir ilmiah, integritas, dan penguatan kerukunan umat beragama.',
+      },
+      {
+        name: 'Akidah',
+        content:
+          'Peserta didik mendalami implementasi syu’abul iman dalam menjaga kehormatan diri dan harmoni sosial.',
+      },
+      {
+        name: 'Akhlak',
+        content:
+          'Peserta didik mengaktualisasikan akhlak mulia dalam pencegahan kekerasan, penyalahgunaan teknologi, dan menjaga kelestarian lingkungan.',
+      },
+      {
+        name: 'Fikih',
+        content:
+          'Peserta didik memahami dan menganalisis prinsip-prinsip transaksi ekonomi syariah dan muamalah modern yang etis.',
+      },
+      {
+        name: 'Sejarah Peradaban Islam',
+        content:
+          'Peserta didik meneladani perjuangan para ulama dan tokoh Islam dalam membangun peradaban dan kebangsaan Indonesia.',
+      },
+    ],
+  },
+  {
     id: 'cp-sma-fase-e-bindo',
     subjectCode: 'BINDO',
     phase: 'E',

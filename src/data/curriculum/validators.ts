@@ -1,12 +1,15 @@
 import { CurriculumStructureRule, ValidationIssue } from './types';
 import { ALL_CURRICULUM_STRUCTURE_RULES } from './structure';
-import { findSubjectByCode } from './subjects';
+import { findSubjectByCode, isReligionSubject } from './subjects';
 import { OFFICIAL_REGULATION_SOURCES } from './regulations';
+import { MasterCPEntry } from './cp/types';
+import { ALL_MASTER_CP_ENTRIES } from './cp';
 
 export interface ValidationResult {
   isValid: boolean;
   issues: ValidationIssue[];
 }
+
 
 const REGULATION_ID_SET = new Set(OFFICIAL_REGULATION_SOURCES.map((r) => r.id));
 
@@ -484,6 +487,218 @@ export function validateAllStructureRules(
 }
 
 /**
+ * Memvalidasi konsistensi internal dari sebuah MasterCPEntry
+ */
+export function validateCPEntry(cp: MasterCPEntry): ValidationResult {
+  const issues: ValidationIssue[] = [];
+
+  // 1. Validasi ID
+  if (!cp.id || typeof cp.id !== 'string') {
+    issues.push({
+      ruleId: cp.id || 'UNKNOWN_CP',
+      field: 'id',
+      message: 'Capaian Pembelajaran harus memiliki id yang valid.',
+      severity: 'ERROR',
+    });
+  }
+
+  // 2. Validasi Subjek (Harus terdaftar di Master Subjects)
+  if (!cp.subjectCode) {
+    issues.push({
+      ruleId: cp.id,
+      field: 'subjectCode',
+      message: 'CP tidak memiliki subjectCode.',
+      severity: 'ERROR',
+    });
+  } else {
+    const subject = findSubjectByCode(cp.subjectCode);
+    if (!subject) {
+      issues.push({
+        ruleId: cp.id,
+        field: 'subjectCode',
+        message: `Kode mata pelajaran '${cp.subjectCode}' pada CP tidak ditemukan di Master Subjects.`,
+        severity: 'ERROR',
+      });
+    }
+  }
+
+  // 3. Validasi Regulasi Rujukan (Harus terdaftar di Regulation Registry)
+  if (!cp.regulationSourceId) {
+    issues.push({
+      ruleId: cp.id,
+      field: 'regulationSourceId',
+      message: 'CP tidak memiliki regulationSourceId.',
+      severity: 'ERROR',
+    });
+  } else if (!REGULATION_ID_SET.has(cp.regulationSourceId)) {
+    issues.push({
+      ruleId: cp.id,
+      field: 'regulationSourceId',
+      message: `Regulasi ID '${cp.regulationSourceId}' pada CP tidak terdaftar di OFFICIAL_REGULATION_SOURCES.`,
+      severity: 'ERROR',
+    });
+  }
+
+  // 4. Validasi Batasan Regulasi BKPDM 020/2026:
+  // Regulasi 020/2026 KHUSUS kelompok Pendidikan Agama dan Budi Pekerti
+  if (cp.regulationSourceId === 'DEC-BKPDM-020-2026' && !isReligionSubject(cp.subjectCode)) {
+    issues.push({
+      ruleId: cp.id,
+      field: 'regulationSourceId',
+      message: `Keputusan Kepala BKPDM No. 020 Tahun 2026 hanya berlaku untuk Pendidikan Agama dan Budi Pekerti, tidak dapat diterapkan pada mata pelajaran '${cp.subjectCode}'.`,
+      severity: 'ERROR',
+    });
+  }
+
+  // 5. Validasi VERIFIED CP 2026 Agama
+  if (
+    cp.verificationStatus === 'VERIFIED' &&
+    isReligionSubject(cp.subjectCode) &&
+    cp.implementationFromAcademicYear &&
+    cp.implementationFromAcademicYear >= '2026/2027' &&
+    cp.regulationSourceId !== 'DEC-BKPDM-020-2026'
+  ) {
+    issues.push({
+      ruleId: cp.id,
+      field: 'regulationSourceId',
+      message: `CP Agama TA 2026/2027 berstatus VERIFIED harus merujuk pada regulasi DEC-BKPDM-020-2026 (ditemukan: ${cp.regulationSourceId}).`,
+      severity: 'ERROR',
+    });
+  }
+
+  // 6. Validasi Periode Berlaku (effectiveFrom <= effectiveUntil jika keduanya ada)
+  if (cp.effectiveFrom && cp.effectiveUntil) {
+    if (cp.effectiveFrom > cp.effectiveUntil) {
+      issues.push({
+        ruleId: cp.id,
+        field: 'effectivePeriod',
+        message: `effectiveFrom (${cp.effectiveFrom}) tidak boleh lebih besar dari effectiveUntil (${cp.effectiveUntil}).`,
+        severity: 'ERROR',
+      });
+    }
+  }
+
+  // 7. Validasi Evidence untuk CP berstatus VERIFIED
+  if (cp.verificationStatus === 'VERIFIED') {
+    if (!cp.evidence || cp.evidence.length === 0) {
+      issues.push({
+        ruleId: cp.id,
+        field: 'evidence',
+        message: `CP berstatus VERIFIED wajib menyertakan evidence resmi (bukti naskah asli).`,
+        severity: 'ERROR',
+      });
+    } else {
+      for (const ev of cp.evidence) {
+        if (!isSpecificOfficialSourceUrl(ev.sourceUrl)) {
+          issues.push({
+            ruleId: cp.id,
+            field: 'evidence.sourceUrl',
+            message: `URL evidence '${ev.sourceUrl}' tidak valid atau hanya menunjuk domain generic homepage.`,
+            severity: 'ERROR',
+          });
+        }
+        if (!hasSpecificLocatorDetails(ev.locator)) {
+          issues.push({
+            ruleId: cp.id,
+            field: 'evidence.locator',
+            message: `Locator evidence tidak memadai untuk CP VERIFIED. Wajib menyertakan lampiran, tabel, pasal, atau nomor halaman spesifik.`,
+            severity: 'ERROR',
+          });
+        }
+      }
+    }
+  }
+
+  const errors = issues.filter((i) => i.severity === 'ERROR');
+  return {
+    isValid: errors.length === 0,
+    issues,
+  };
+}
+
+/**
+ * Memvalidasi seluruh kumpulan Master CP Entries
+ */
+export function validateAllCPEntries(entries: MasterCPEntry[] = ALL_MASTER_CP_ENTRIES) {
+  const allIssues: ValidationIssue[] = [];
+  const seenIds = new Set<string>();
+
+  for (const cp of entries) {
+    if (seenIds.has(cp.id)) {
+      allIssues.push({
+        ruleId: cp.id,
+        field: 'id',
+        message: `Duplicate CP ID terdeteksi: '${cp.id}'.`,
+        severity: 'ERROR',
+      });
+    } else {
+      seenIds.add(cp.id);
+    }
+
+    const res = validateCPEntry(cp);
+    if (res.issues.length > 0) {
+      allIssues.push(...res.issues);
+    }
+  }
+
+  // Cross-entry Overlapping Active Versions
+  const activeEntries = entries.filter((c) => c.verificationStatus !== 'SUPERSEDED');
+  const grouped = new Map<string, MasterCPEntry[]>();
+
+  for (const cp of activeEntries) {
+    const key = `${cp.level}_${cp.phase}_${cp.subjectCode}`;
+    const grp = grouped.get(key) || [];
+    grp.push(cp);
+    grouped.set(key, grp);
+  }
+
+  for (const [key, group] of grouped.entries()) {
+    if (group.length > 1) {
+      for (let i = 0; i < group.length; i++) {
+        for (let j = i + 1; j < group.length; j++) {
+          const cpA = group[i];
+          const cpB = group[j];
+
+          const startA = cpA.effectiveFrom || '1970-01-01';
+          const endA = cpA.effectiveUntil || '9999-12-31';
+          const startB = cpB.effectiveFrom || '1970-01-01';
+          const endB = cpB.effectiveUntil || '9999-12-31';
+
+          const overlaps = startA <= endB && startB <= endA;
+          if (overlaps) {
+            allIssues.push({
+              ruleId: cpA.id,
+              field: 'effectivePeriod',
+              message: `Overlapping active CP terdeteksi untuk kunci ${key}: CP '${cpA.id}' dan '${cpB.id}' memiliki periode berlaku aktif yang saling tumpang tindih.`,
+              severity: 'ERROR',
+            });
+          }
+        }
+      }
+    }
+  }
+
+  const errors = allIssues.filter((i) => i.severity === 'ERROR');
+  const warnings = allIssues.filter((i) => i.severity === 'WARNING');
+  const verifiedCPs = entries.filter((c) => c.verificationStatus === 'VERIFIED').length;
+  const unverifiedCPs = entries.filter((c) => c.verificationStatus === 'UNVERIFIED').length;
+  const supersededCPs = entries.filter((c) => c.verificationStatus === 'SUPERSEDED').length;
+
+  return {
+    valid: errors.length === 0,
+    totalCPs: entries.length,
+    verifiedCPs,
+    unverifiedCPs,
+    supersededCPs,
+    errors,
+    warnings,
+    errorCount: errors.length,
+    warningCount: warnings.length,
+    issues: allIssues,
+  };
+}
+
+/**
  * MASTER VALIDATOR RESMI CURRICULUM FOUNDATION
  * Memvalidasi integritas master struktur kurikulum nasional (SD, SMP, SMA)
  */
@@ -492,4 +707,5 @@ export function validateCurriculumMaster(
 ) {
   return validateAllStructureRules(rules);
 }
+
 

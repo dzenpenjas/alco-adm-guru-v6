@@ -27,6 +27,9 @@ import {
   CURRICULUM_REGULATIONS,
   findCPBySubjectAndPhase,
   resolveCPContext,
+  isReligionSubject,
+  validateCPEntry,
+  validateAllCPEntries,
   SD_CP_ENTRIES,
   SMP_CP_ENTRIES,
   SMA_CP_ENTRIES,
@@ -954,6 +957,187 @@ async function runCurriculumMasterTests() {
   assert(
     unknownCpRes.status === 'UNRESOLVED' && unknownCpRes.cp === null,
     'Mapel tidak dikenal menghasilkan status UNRESOLVED dengan cp: null'
+  );
+
+  // TEST 30: Regulation Registry BKPDM 020/2026 Audit
+  console.log('\n--- 30. Regulation Registry BKPDM 020/2026 Audit ---');
+  const reg020 = CURRICULUM_REGULATIONS.find((r) => r.id === 'DEC-BKPDM-020-2026');
+  assert(reg020 !== undefined, 'Keputusan Kepala BKPDM No. 020 Tahun 2026 terdaftar di Regulation Registry');
+  assert(reg020?.year === 2026, 'Tahun regulasi 020/2026 adalah 2026');
+  assert(reg020?.type === 'OFFICIAL_DECISION', 'Tipe regulasi adalah OFFICIAL_DECISION');
+  assert(
+    reg020?.sourceUrl.startsWith('https://kurikulum.kemdikbud.go.id/'),
+    'URL regulasi 020/2026 berasal dari domain resmi portal Kurikulum Kemendikdasmen'
+  );
+  assert(
+    reg020?.legalEffectiveDate === null,
+    'legalEffectiveDate 020/2026 tidak ditebak (bernilai null karena belum terbukti di naskah hukum)'
+  );
+  assert(
+    reg020?.implementationFromAcademicYear === '2026/2027',
+    'implementationFromAcademicYear 020/2026 tercatat 2026/2027'
+  );
+
+  // TEST 31: Religion Subject Canonical Helper
+  console.log('\n--- 31. Religion Subject Canonical Helper ---');
+  assert(isReligionSubject('PAI') === true, 'PAI diidentifikasi sebagai mapel agama');
+  assert(isReligionSubject('PAK') === true, 'PAK diidentifikasi sebagai mapel agama');
+  assert(isReligionSubject('PKAT') === true, 'PKAT diidentifikasi sebagai mapel agama');
+  assert(isReligionSubject('PHINDU') === true, 'PHINDU diidentifikasi sebagai mapel agama');
+  assert(isReligionSubject('PBUDDHA') === true, 'PBUDDHA diidentifikasi sebagai mapel agama');
+  assert(isReligionSubject('PKHONGHUCU') === true, 'PKHONGHUCU diidentifikasi sebagai mapel agama');
+  assert(isReligionSubject('PJOK') === false, 'PJOK BUKAN mapel agama');
+  assert(isReligionSubject('MAT') === false, 'Matematika BUKAN mapel agama');
+  assert(isReligionSubject('BINDO') === false, 'Bahasa Indonesia BUKAN mapel agama');
+  assert(isReligionSubject('CODING_AI') === false, 'Coding & AI BUKAN mapel agama');
+
+  // TEST 32: Non-Religion CP Persistence (020/2026 does not replace PJOK/MAT/BINDO)
+  console.log('\n--- 32. Non-Religion CP Persistence ---');
+  const pjok2025Res = resolveCPContext({
+    subjectCode: 'PJOK',
+    phase: 'A',
+    level: 'SD',
+    academicYear: '2025/2026',
+  });
+  assert(
+    pjok2025Res.status === 'RESOLVED' &&
+      pjok2025Res.entry?.regulationSourceId === 'DEC-BSKAP-046-2025',
+    'PJOK 2025/2026 teresolusi ke CP BSKAP 046/2025'
+  );
+
+  const pjok2026Res = resolveCPContext({
+    subjectCode: 'PJOK',
+    phase: 'A',
+    level: 'SD',
+    academicYear: '2026/2027',
+  });
+  assert(
+    pjok2026Res.status === 'RESOLVED' &&
+      pjok2026Res.entry?.regulationSourceId === 'DEC-BSKAP-046-2025',
+    'PJOK 2026/2027 tetap teresolusi ke CP BSKAP 046/2025 (tidak digantikan oleh 020/2026)'
+  );
+
+  // TEST 33: Religion CP Versioning (PAI 2025/2026 vs 2026/2027)
+  console.log('\n--- 33. Religion CP Versioning (PAI 2025/2026 vs 2026/2027) ---');
+  const pai2025Res = resolveCPContext({
+    subjectCode: 'PAI',
+    phase: 'A',
+    level: 'SD',
+    academicYear: '2025/2026',
+  });
+  assert(
+    pai2025Res.status === 'RESOLVED' &&
+      pai2025Res.entry?.regulationSourceId === 'DEC-BSKAP-046-2025',
+    'PAI 2025/2026 teresolusi ke CP BSKAP 046/2025'
+  );
+
+  const pai2026Res = resolveCPContext({
+    subjectCode: 'PAI',
+    phase: 'A',
+    level: 'SD',
+    academicYear: '2026/2027',
+  });
+  assert(
+    pai2026Res.status === 'RESOLVED' &&
+      pai2026Res.entry?.regulationSourceId === 'DEC-BKPDM-020-2026',
+    'PAI 2026/2027 teresolusi ke CP BKPDM 020/2026'
+  );
+
+  // TEST 34: CP Validator Enforcement
+  console.log('\n--- 34. CP Validator Enforcement ---');
+  // a. Non-religion CP using 020/2026 → ERROR
+  const invalidNonReligionCP: any = {
+    id: 'cp-invalid-pjok-020',
+    subjectCode: 'PJOK',
+    phase: 'A',
+    level: 'SD',
+    regulationSourceId: 'DEC-BKPDM-020-2026',
+    verificationStatus: 'UNVERIFIED',
+    generalDescription: 'Test PJOK with 020',
+    elements: [],
+  };
+  const invalidCPRes1 = validateCPEntry(invalidNonReligionCP);
+  assert(
+    invalidCPRes1.isValid === false &&
+      invalidCPRes1.issues.some((i) => i.field === 'regulationSourceId'),
+    'CP non-agama yang menggunakan regulasi 020/2026 ditolak oleh validator (ERROR)'
+  );
+
+  // b. effectiveFrom > effectiveUntil → ERROR
+  const invalidPeriodCP: any = {
+    id: 'cp-invalid-period',
+    subjectCode: 'MAT',
+    phase: 'A',
+    level: 'SD',
+    regulationSourceId: 'DEC-BSKAP-046-2025',
+    verificationStatus: 'UNVERIFIED',
+    effectiveFrom: '2026-07-01',
+    effectiveUntil: '2025-06-30',
+    generalDescription: 'Test inverted period',
+    elements: [],
+  };
+  const invalidCPRes2 = validateCPEntry(invalidPeriodCP);
+  assert(
+    invalidCPRes2.isValid === false &&
+      invalidCPRes2.issues.some((i) => i.field === 'effectivePeriod'),
+    'CP dengan effectiveFrom > effectiveUntil ditolak oleh validator (ERROR)'
+  );
+
+  // c. Validasi seluruh Master CP dataset
+  const cpValidationSummary = validateAllCPEntries();
+  assert(
+    cpValidationSummary.valid === true,
+    `Seluruh master CP entries valid tanpa error (total: ${cpValidationSummary.totalCPs} CP, verified: ${cpValidationSummary.verifiedCPs}, unverified: ${cpValidationSummary.unverifiedCPs})`
+  );
+
+  // TEST 35: CP Ambiguity & Unresolved Safety
+  console.log('\n--- 35. CP Ambiguity & Unresolved Safety ---');
+  const unknownMapelCP = resolveCPContext({
+    subjectCode: 'KIMIA_GAIB',
+    phase: 'E',
+    level: 'SMA',
+  });
+  assert(
+    unknownMapelCP.status === 'UNRESOLVED' && unknownMapelCP.cp === null,
+    'Subjek yang tidak dikenal menghasilkan status UNRESOLVED'
+  );
+
+  const duplicateCandidatePool: any[] = [
+    {
+      id: 'cp-dup-1',
+      subjectCode: 'BINDO',
+      phase: 'D',
+      level: 'SMP',
+      regulationSourceId: 'DEC-BSKAP-046-2025',
+      verificationStatus: 'VERIFIED',
+      generalDescription: 'Versi 1',
+      elements: [],
+      effectiveFrom: '2025-07-01',
+    },
+    {
+      id: 'cp-dup-2',
+      subjectCode: 'BINDO',
+      phase: 'D',
+      level: 'SMP',
+      regulationSourceId: 'DEC-BSKAP-046-2025',
+      verificationStatus: 'VERIFIED',
+      generalDescription: 'Versi 2',
+      elements: [],
+      effectiveFrom: '2025-07-01',
+    },
+  ];
+  const duplicateCPRes = resolveCPContext({
+    subjectCode: 'BINDO',
+    phase: 'D',
+    level: 'SMP',
+    academicYear: '2025/2026',
+    entriesPool: duplicateCandidatePool,
+  });
+  assert(
+    duplicateCPRes.status === 'AMBIGUOUS' &&
+      duplicateCPRes.cp === null &&
+      duplicateCPRes.candidates?.length === 2,
+    'Kandidat CP ganda aktif menghasilkan status AMBIGUOUS tanpa memilih diam-diam'
   );
 
   console.log('\n===========================================================');

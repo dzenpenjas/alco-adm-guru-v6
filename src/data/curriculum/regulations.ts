@@ -11,6 +11,23 @@ import { RegulationSource } from './types';
  */
 export const OFFICIAL_REGULATION_SOURCES: RegulationSource[] = [
   {
+    id: 'DEC-BKPDM-020-2026',
+    title:
+      'Keputusan Kepala Badan Standar, Kurikulum, dan Penjaminan Mutu Pendidikan Nomor 020 Tahun 2026 tentang Capaian Pembelajaran Pendidikan Agama dan Budi Pekerti pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah',
+    number: '020 Tahun 2026',
+    year: 2026,
+    type: 'OFFICIAL_DECISION',
+    authority:
+      'Badan Standar, Kurikulum, dan Penjaminan Mutu Pendidikan (BKPDM) Kementerian Pendidikan Dasar dan Menengah RI',
+    legalEffectiveDate: null,
+    implementationFromAcademicYear: '2026/2027',
+    effectiveFrom: '2026-07-01',
+    sourceUrl:
+      'https://kurikulum.kemdikbud.go.id/unduhan/keputusan-kepala-bkpdm-nomor-020-tahun-2026',
+    notes:
+      'Pembaruan Capaian Pembelajaran khusus mata pelajaran kelompok Pendidikan Agama dan Budi Pekerti (PAI, Kristen, Katolik, Hindu, Buddha, Khonghucu) mulai Tahun Ajaran 2026/2027. Tidak mengubah CP mata pelajaran umum/non-agama.',
+  },
+  {
     id: 'REG-PERMENDIKBUDRISTEK-12-2024',
     title:
       'Permendikbudristek Nomor 12 Tahun 2024 tentang Kurikulum pada Pendidikan Anak Usia Dini, Jenjang Pendidikan Dasar, dan Jenjang Pendidikan Menengah',

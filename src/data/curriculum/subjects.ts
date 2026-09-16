@@ -326,3 +326,28 @@ export function findSubjectByNameOrAlias(nameOrAlias: string): CurriculumSubject
     });
   });
 }
+
+/**
+ * Daftar kode baku mata pelajaran kelompok Pendidikan Agama dan Budi Pekerti
+ */
+export const RELIGION_SUBJECT_CODES = [
+  'PAI',
+  'PAK',
+  'PKAT',
+  'PHINDU',
+  'PBUDDHA',
+  'PKHONGHUCU',
+] as const;
+
+export type ReligionSubjectCode = (typeof RELIGION_SUBJECT_CODES)[number];
+
+/**
+ * Memeriksa apakah suatu kode mata pelajaran termasuk kelompok Pendidikan Agama dan Budi Pekerti.
+ * Menggunakan kode kanonikal resmi, bukan pencarian substring nama sembarangan.
+ */
+export function isReligionSubject(subjectCode?: string): boolean {
+  if (!subjectCode || typeof subjectCode !== 'string') return false;
+  const norm = subjectCode.trim().toUpperCase();
+  return (RELIGION_SUBJECT_CODES as readonly string[]).includes(norm);
+}
+

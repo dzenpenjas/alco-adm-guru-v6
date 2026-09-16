@@ -90,6 +90,89 @@ export const SD_CP_ENTRIES: MasterCPEntry[] = [
     ],
   },
   {
+    id: 'cp25-sd-fase-a-pai',
+    subjectCode: 'PAI',
+    phase: 'A',
+    level: 'SD',
+    regulationSourceId: 'DEC-BSKAP-046-2025',
+    effectiveFrom: '2025-07-01',
+    effectiveUntil: '2026-06-30',
+    implementationFromAcademicYear: '2025/2026',
+    verificationStatus: 'UNVERIFIED',
+    notes:
+      'CP PAI dan Budi Pekerti SD Fase A TA 2025/2026 berbasis Keputusan Kepala BSKAP No. 046/H/KR/2025 (berlaku hingga digantikan oleh Keputusan BKPDM No. 020 Tahun 2026).',
+    generalDescription:
+      'Pada akhir Fase A, peserta didik mengenal huruf hijaiyah berharakat, rukun Islam, rukun iman, kalimat thoyyibah, kisah nabi, serta membiasakan akhlak mulia dan tata cara bersuci serta salat fardhu.',
+    elements: [
+      {
+        name: 'Al-Qur’an dan Hadis',
+        content:
+          'Peserta didik mengenal huruf hijaiyah dan harakatnya, huruf hijaiyah bersambung, dan beberapa surah pendek Al-Qur’an.',
+      },
+      {
+        name: 'Akidah',
+        content:
+          'Peserta didik mengenal rukun iman kepada Allah, malaikat-malaikat Allah, dan asmaulhusna (ar-Rahman, ar-Rahim, al-Malik, al-Quddus).',
+      },
+      {
+        name: 'Akhlak',
+        content:
+          'Peserta didik membiasakan bersikap jujur, santun, disiplin, berbakti kepada orang tua, dan menyayangi sesama.',
+      },
+      {
+        name: 'Fikih',
+        content:
+          'Peserta didik mengenal rukun Islam, melafalkan dua kalimat syahadat, serta tata cara bersuci (wudu) dan salat fardhu.',
+      },
+      {
+        name: 'Sejarah Peradaban Islam',
+        content:
+          'Peserta didik mengenal kisah keteladanan Nabi Muhammad SAW dan beberapa nabi lainnya.',
+      },
+    ],
+  },
+  {
+    id: 'cp26-sd-fase-a-pai',
+    subjectCode: 'PAI',
+    phase: 'A',
+    level: 'SD',
+    regulationSourceId: 'DEC-BKPDM-020-2026',
+    effectiveFrom: '2026-07-01',
+    implementationFromAcademicYear: '2026/2027',
+    verificationStatus: 'UNVERIFIED',
+    notes:
+      'Capaian Pembelajaran Pendidikan Agama Islam dan Budi Pekerti Fase A berdasarkan Keputusan Kepala BKPDM Nomor 020 Tahun 2026 (status UNVERIFIED hingga audit dokumen naskah utuh selesai).',
+    generalDescription:
+      'Pada akhir Fase A, peserta didik mengenal huruf hijaiyah dan harakatnya, rukun Islam dan rukun iman, membiasakan akhlak mulia dalam keluarga dan sekolah, serta mengenal tata cara bersuci dan salat secara sederhana.',
+    elements: [
+      {
+        name: 'Al-Qur’an dan Hadis',
+        content:
+          'Peserta didik mengenal huruf hijaiyah berharakat, surah-surah pendek pilihan, dan pesan pokok Al-Qur’an.',
+      },
+      {
+        name: 'Akidah',
+        content:
+          'Peserta didik memahami rukun iman dasar dan asmaulhusna dalam kehidupan sehari-hari.',
+      },
+      {
+        name: 'Akhlak',
+        content:
+          'Peserta didik mempraktikkan adab kepada orang tua, guru, teman, dan lingkungan sekitar.',
+      },
+      {
+        name: 'Fikih',
+        content:
+          'Peserta didik mempraktikkan tata cara bersuci dan gerakan salat fardhu dengan benar.',
+      },
+      {
+        name: 'Sejarah Peradaban Islam',
+        content:
+          'Peserta didik meneladani kisah masa kecil Nabi Muhammad SAW.',
+      },
+    ],
+  },
+  {
     id: 'cp-sd-fase-a-bindo',
     subjectCode: 'BINDO',
     phase: 'A',

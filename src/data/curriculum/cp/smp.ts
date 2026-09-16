@@ -6,6 +6,89 @@ import { MasterCPEntry } from './types';
  */
 export const SMP_CP_ENTRIES: MasterCPEntry[] = [
   {
+    id: 'cp25-smp-fase-d-pai',
+    subjectCode: 'PAI',
+    phase: 'D',
+    level: 'SMP',
+    regulationSourceId: 'DEC-BSKAP-046-2025',
+    effectiveFrom: '2025-07-01',
+    effectiveUntil: '2026-06-30',
+    implementationFromAcademicYear: '2025/2026',
+    verificationStatus: 'UNVERIFIED',
+    notes:
+      'CP PAI dan Budi Pekerti SMP Fase D TA 2025/2026 berbasis Keputusan Kepala BSKAP No. 046/H/KR/2025.',
+    generalDescription:
+      'Pada akhir Fase D, peserta didik memahami ayat Al-Qur’an dan hadis tentang pentingnya ilmu pengetahuan dan toleransi, rukun iman, akhlak terpuji terhadap diri dan lingkungan, ketentuan ibadah salat, sujud, zakat, puasa, serta sejarah peradaban Islam.',
+    elements: [
+      {
+        name: 'Al-Qur’an dan Hadis',
+        content:
+          'Peserta didik memahami ayat Al-Qur’an dan hadis tentang pentingnya menuntut ilmu pengetahuan, menghargai keberagaman, dan moderasi beragama.',
+      },
+      {
+        name: 'Akidah',
+        content:
+          'Peserta didik memahami rukun iman (iman kepada kitab-kitab Allah, rasul-rasul Allah, hari akhir, dan qadha-qadar) beserta hikmahnya.',
+      },
+      {
+        name: 'Akhlak',
+        content:
+          'Peserta didik mendalami adab dan akhlak terpuji (integritas, amanah, toleransi) serta menjauhi akhlak tercela (ghibah, fitnah, bullying).',
+      },
+      {
+        name: 'Fikih',
+        content:
+          'Peserta didik memahami ketentuan sujud sahwi, sujud tilawah, sujud syukur, salat jamak/qashar, zakat, puasa fardhu dan sunnah, serta haji dan umrah.',
+      },
+      {
+        name: 'Sejarah Peradaban Islam',
+        content:
+          'Peserta didik menganalisis sejarah perjuangan Khulafaur Rasyidin, Daulah Umayyah, Daulah Abbasiyah, dan masuknya Islam ke Nusantara.',
+      },
+    ],
+  },
+  {
+    id: 'cp26-smp-fase-d-pai',
+    subjectCode: 'PAI',
+    phase: 'D',
+    level: 'SMP',
+    regulationSourceId: 'DEC-BKPDM-020-2026',
+    effectiveFrom: '2026-07-01',
+    implementationFromAcademicYear: '2026/2027',
+    verificationStatus: 'UNVERIFIED',
+    notes:
+      'Capaian Pembelajaran PAI dan Budi Pekerti SMP Fase D berdasarkan Keputusan Kepala BKPDM Nomor 020 Tahun 2026.',
+    generalDescription:
+      'Pada akhir Fase D, peserta didik mampu membaca Al-Qur’an dengan tartil, memahami pesan ayat dan hadis tentang toleransi dan etika digital, mendalami akidah dan akhlak mulia, memahami fikih ibadah dan muamalah dasar, serta meneladani sejarah peradaban Islam.',
+    elements: [
+      {
+        name: 'Al-Qur’an dan Hadis',
+        content:
+          'Peserta didik membaca dengan tartil dan memahami kandungan ayat Al-Qur’an serta hadis tentang ilmu pengetahuan, kelestarian alam, dan persaudaraan insaniyah.',
+      },
+      {
+        name: 'Akidah',
+        content:
+          'Peserta didik menghayati rukun iman dan merefleksikan nilai ketauhidan dalam pembentukan karakter dan etika kehidupan.',
+      },
+      {
+        name: 'Akhlak',
+        content:
+          'Peserta didik membiasakan akhlak mulia kepada diri sendiri, sesama manusia (termasuk etika bermedia digital), dan alam semesta.',
+      },
+      {
+        name: 'Fikih',
+        content:
+          'Peserta didik mempraktikkan ibadah fardhu dan sunnah serta memahami prinsip dasar muamalah yang berkeadilan.',
+      },
+      {
+        name: 'Sejarah Peradaban Islam',
+        content:
+          'Peserta didik meneladani kepemimpinan Rasulullah SAW, para sahabat, dan perkembangan peradaban Islam yang rahmatan lil ‘alamin.',
+      },
+    ],
+  },
+  {
     id: 'cp-smp-fase-d-bindo',
     subjectCode: 'BINDO',
     phase: 'D',
