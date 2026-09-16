@@ -1,4 +1,4 @@
-import { ActiveContext, CPSource, CPElem, CPVerificationStatus } from '../types';
+import { ActiveContext, CPSource, CPElem, CPVerificationStatus, normalizeCPVerificationStatus } from '../types';
 import { CP_PRESETS, CPSamplePreset } from '../data/curriculumDefaults';
 
 export interface CPSourceSearchResult {
@@ -98,7 +98,7 @@ class CPSourceRepository {
           documentYear: item.sourceInfo.documentYear || '2024/2025',
           url: item.sourceInfo.url,
           page: item.sourceInfo.page,
-          verificationStatus: item.sourceInfo.verificationStatus,
+          verificationStatus: normalizeCPVerificationStatus(item.sourceInfo.verificationStatus),
           generalDescription: item.generalDescription,
           elements: item.elements.map((el, elIdx) => ({
             id: `elem-${index + 1}-${elIdx + 1}`,
@@ -133,7 +133,7 @@ class CPSourceRepository {
       documentYear: new Date().getFullYear().toString(),
       url: 'https://kurikulum.kemdikbud.go.id/',
       page: `${defaultPhase} / ${defaultGrade}`,
-      verificationStatus: 'local_reference',
+      verificationStatus: 'LOCAL_REFERENCE',
       generalDescription: `Pada akhir ${defaultPhase}, peserta didik menguasai kompetensi dasar ${defaultSubject} sesuai tahapan perkembangan belajar pada ${defaultGrade}.`,
       elements: [
         {
@@ -149,7 +149,7 @@ class CPSourceRepository {
         url: 'https://kurikulum.kemdikbud.go.id/',
         page: `${defaultPhase} / ${defaultGrade}`,
         retrievedAt: new Date().toISOString(),
-        verificationStatus: 'local_reference',
+        verificationStatus: 'LOCAL_REFERENCE',
       },
       confidenceScore: 10,
     };

@@ -4,6 +4,7 @@ import {
   WorkflowCompletionStatus,
   ActiveContext,
   AcademicSetting,
+  normalizeCPVerificationStatus,
 } from '../types';
 
 export interface CPValidationDetails {
@@ -49,9 +50,10 @@ export function validateCPDataWorkflow(
   if (!cp.source) {
     issues.push('Sumber rujukan CP belum diset.');
   } else {
-    if (cp.source.verificationStatus === 'superseded') {
+    const status = normalizeCPVerificationStatus(cp.source.verificationStatus);
+    if (status === 'SUPERSEDED') {
       issues.push('Sumber CP yang digunakan telah kedaluwarsa/digantikan (SUPERSEDED).');
-    } else if (cp.source.verificationStatus === 'version_conflict') {
+    } else if (status === 'VERSION_CONFLICT') {
       issues.push('Terjadi konflik versi CP (AMBIGUOUS). Spesifikasikan tahun ajaran/regulasi.');
     }
   }

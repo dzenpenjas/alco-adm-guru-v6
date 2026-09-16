@@ -42,6 +42,7 @@ import {
   normalizeCalendarDayStatus,
   validateCalendarCompleteness,
 } from '../src/services/jpEngine';
+import { normalizeCPVerificationStatus } from '../src/types';
 
 function assert(condition: boolean, message: string) {
   if (!condition) {
@@ -1203,6 +1204,43 @@ async function runCurriculumMasterTests() {
   assert(
     supersededRes.status === 'UNRESOLVED',
     'CP yang digantikan (SUPERSEDED) tidak terpilih dan mengembalikan UNRESOLVED'
+  );
+
+  // Unresolved religion subjects without official dataset
+  const unverifiedReligions = [
+    { subject: 'PAK', phase: 'A', level: 'SD' },
+    { subject: 'PKAT', phase: 'D', level: 'SMP' },
+    { subject: 'PHINDU', phase: 'E', level: 'SMA' },
+    { subject: 'PBUDDHA', phase: 'B', level: 'SD' },
+    { subject: 'PKHONGHUCU', phase: 'F', level: 'SMA' },
+  ];
+
+  for (const item of unverifiedReligions) {
+    const res = resolveCPContext({
+      subjectCode: item.subject,
+      phase: item.phase,
+      level: item.level,
+      academicYear: '2026/2027',
+    });
+    assert(
+      res.status === 'UNRESOLVED',
+      `Mapel ${item.subject} Fase ${item.phase} tanpa data resmi master mengembalikan UNRESOLVED (bukan dummy RESOLVED)`
+    );
+  }
+
+  // LOCAL_REFERENCE normalization test
+  assert(
+    normalizeCPVerificationStatus('LOCAL_REFERENCE') === 'LOCAL_REFERENCE' &&
+      normalizeCPVerificationStatus('local_reference') === 'LOCAL_REFERENCE' &&
+      normalizeCPVerificationStatus('local_reference') !== 'VERIFIED',
+    'LOCAL_REFERENCE di-normalize ke LOCAL_REFERENCE dan BUKAN dianggap VERIFIED'
+  );
+
+  // CP without cpVersion test
+  const cpWithoutVersion: any = { id: 'cp-no-ver', subjectCode: 'PJOK' };
+  assert(
+    cpWithoutVersion.cpVersion === undefined,
+    'CP tanpa cpVersion tidak otomatis diberi default string "2026"'
   );
 
   console.log('\n===========================================================');

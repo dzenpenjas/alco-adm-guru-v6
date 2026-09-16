@@ -198,7 +198,7 @@ export const CP_PRESETS: CPSamplePreset[] = [
       url: 'https://kurikulum.kemdikbud.go.id/',
       page: 'Fase A (Kelas 1-2 SD)',
       retrievedAt: new Date().toISOString(),
-      verificationStatus: 'verified',
+      verificationStatus: 'VERIFIED',
     },
     generalDescription:
       'Pada akhir Fase A, peserta didik dapat menunjukkan berbagai aktivitas pola gerak dasar lokomotor, non-lokomotor, dan manipulatif sebagai hasil peniruan dari berbagai sumber. Peserta didik mengetahui prosedur pola gerak dasar, menjaga kebersihan dan kesehatan diri, serta menunjukkan perilaku bertanggung jawab, mandiri, dan menghargai orang lain.',
@@ -237,7 +237,7 @@ export const CP_PRESETS: CPSamplePreset[] = [
       url: 'https://kurikulum.kemdikbud.go.id/',
       page: 'Bahasa Indonesia Fase B',
       retrievedAt: new Date().toISOString(),
-      verificationStatus: 'verified',
+      verificationStatus: 'VERIFIED',
     },
     generalDescription:
       'Pada akhir Fase B, peserta didik memiliki kemampuan berbahasa untuk berkomunikasi dan bernalar, sesuai dengan tujuan, konteks sosial, akademis, dan dunia kerja. Peserta didik mampu memahami pesan dan informasi tentang kehidupan sehari-hari, teks narasi, dan puisi sederhana dalam bentuk cetak atau elektronik.',
@@ -276,7 +276,7 @@ export const CP_PRESETS: CPSamplePreset[] = [
       url: 'https://kurikulum.kemdikbud.go.id/',
       page: 'IPAS Fase B',
       retrievedAt: new Date().toISOString(),
-      verificationStatus: 'verified',
+      verificationStatus: 'VERIFIED',
     },
     generalDescription:
       'Pada akhir Fase B, peserta didik mengidentifikasi keterkaitan antara bentuk serta fungsi bagian tubuh pada manusia dan tumbuhan. Peserta didik dapat membuat simulasi menggunakan bagan/alat bantu sederhana tentang siklus hidup makhluk hidup, wujud zat dan perubahannya, serta bentuk energi dan perubahannya.',
@@ -305,7 +305,7 @@ export const CP_PRESETS: CPSamplePreset[] = [
       url: 'https://kurikulum.kemdikbud.go.id/',
       page: 'Matematika Fase B',
       retrievedAt: new Date().toISOString(),
-      verificationStatus: 'verified',
+      verificationStatus: 'VERIFIED',
     },
     generalDescription:
       'Pada akhir Fase B, peserta didik dapat menunjukkan pemahaman dan intuisi bilangan (number sense) pada bilangan cacah sampai 10.000. Mereka dapat melakukan operasi penjumlahan, pengurangan, perkalian, dan pembagian bilangan cacah sampai 100.',
@@ -339,7 +339,7 @@ export const CP_PRESETS: CPSamplePreset[] = [
       url: 'https://kurikulum.kemdikbud.go.id/',
       page: 'Pendidikan Pancasila Fase B',
       retrievedAt: new Date().toISOString(),
-      verificationStatus: 'verified',
+      verificationStatus: 'VERIFIED',
     },
     generalDescription:
       'Pada akhir Fase B, peserta didik mampu memahami dan menyajikan pesan moral berdasarkan sila-sila Pancasila, mengenal identitas diri dan lingkungan, serta mempraktikkan gotong royong dan mematuhi norma/aturan yang berlaku.',

@@ -23,6 +23,7 @@ import {
   AcademicSetting,
   TeacherProfile,
   ActiveContext,
+  normalizeCPVerificationStatus,
 } from '../types';
 import { validateCPAnalysisDataWorkflow } from '../services/cpWorkflowService';
 
@@ -139,9 +140,9 @@ export const CPAnalysisManager: React.FC<CPAnalysisManagerProps> = ({
       id: cpAnalysis?.id || `cpanalysis-${academicSetting.id}`,
       academicSettingId: academicSetting.id,
       cpId: cp.id,
-      cpSourceId: cp.source?.title,
-      cpRegulationIds: cp.regulationIds || (cp.source?.regulationId ? [cp.source.regulationId] : []),
-      cpVersion: cp.cpVersion || '2026',
+      cpSourceId: cp.source?.regulationId || cp.regulationSourceId || cp.source?.id || cp.id,
+      cpRegulationIds: cp.regulationIds || (cp.source?.regulationId ? [cp.source.regulationId] : (cp.regulationSourceId ? [cp.regulationSourceId] : [])),
+      cpVersion: cp.cpVersion,
       academicYear: academicSetting.academicYear,
       subjectCode: academicSetting.subject,
       phase: academicSetting.phase,
@@ -182,8 +183,8 @@ export const CPAnalysisManager: React.FC<CPAnalysisManagerProps> = ({
 
   // Verification status display label
   const getVerificationBadge = () => {
-    const status = cp.source?.verificationStatus || 'unverified';
-    if (status === 'verified' || status === ('VERIFIED' as any)) {
+    const status = normalizeCPVerificationStatus(cp.source?.verificationStatus);
+    if (status === 'VERIFIED') {
       return (
         <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
           <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
@@ -191,7 +192,15 @@ export const CPAnalysisManager: React.FC<CPAnalysisManagerProps> = ({
         </span>
       );
     }
-    if (status === 'superseded' || status === ('SUPERSEDED' as any)) {
+    if (status === 'LOCAL_REFERENCE') {
+      return (
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300">
+          <AlertTriangle className="w-3.5 h-3.5 text-amber-600" />
+          Referensi Lokal Guru
+        </span>
+      );
+    }
+    if (status === 'SUPERSEDED') {
       return (
         <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-300">
           <AlertTriangle className="w-3.5 h-3.5 text-red-600" />
@@ -199,10 +208,10 @@ export const CPAnalysisManager: React.FC<CPAnalysisManagerProps> = ({
         </span>
       );
     }
-    if (status === 'version_conflict') {
+    if (status === 'VERSION_CONFLICT') {
       return (
-        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300">
-          <AlertTriangle className="w-3.5 h-3.5 text-amber-600" />
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-100 text-purple-800 border border-purple-300">
+          <AlertTriangle className="w-3.5 h-3.5 text-purple-600" />
           Konflik Versi
         </span>
       );

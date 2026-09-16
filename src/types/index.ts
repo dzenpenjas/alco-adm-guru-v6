@@ -122,7 +122,23 @@ export interface ActiveContext {
 
 export type WorkflowCompletionStatus = 'BELUM_DIMULAI' | 'DRAFT' | 'PERLU_DILENGKAPI' | 'SIAP';
 
-export type CPVerificationStatus = 'verified' | 'unverified' | 'local_reference' | 'superseded' | 'version_conflict';
+export type CPVerificationStatus =
+  | 'VERIFIED'
+  | 'UNVERIFIED'
+  | 'LOCAL_REFERENCE'
+  | 'SUPERSEDED'
+  | 'VERSION_CONFLICT';
+
+export function normalizeCPVerificationStatus(status?: string): CPVerificationStatus {
+  if (!status) return 'UNVERIFIED';
+  const u = status.toUpperCase().trim();
+  if (u === 'VERIFIED') return 'VERIFIED';
+  if (u === 'UNVERIFIED') return 'UNVERIFIED';
+  if (u === 'LOCAL_REFERENCE' || u === 'LOCAL' || u === 'DRAFT') return 'LOCAL_REFERENCE';
+  if (u === 'SUPERSEDED') return 'SUPERSEDED';
+  if (u === 'VERSION_CONFLICT' || u === 'AMBIGUOUS') return 'VERSION_CONFLICT';
+  return 'UNVERIFIED';
+}
 
 export interface CPSource {
   title: string;

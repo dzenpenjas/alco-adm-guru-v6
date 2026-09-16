@@ -522,6 +522,50 @@ export function validateCPEntry(cp: MasterCPEntry): ValidationResult {
     }
   }
 
+  // Validasi Level & Phase
+  const validLevels = ['SD', 'SMP', 'SMA'];
+  const validPhases = ['A', 'B', 'C', 'D', 'E', 'F'];
+  if (!cp.level || !validLevels.includes(cp.level)) {
+    issues.push({
+      ruleId: cp.id,
+      field: 'level',
+      message: `Level CP tidak valid: '${cp.level}'. Harus salah satu dari SD, SMP, SMA.`,
+      severity: 'ERROR',
+    });
+  }
+  if (!cp.phase || !validPhases.includes(cp.phase)) {
+    issues.push({
+      ruleId: cp.id,
+      field: 'phase',
+      message: `Fase CP tidak valid: '${cp.phase}'. Harus salah satu dari A, B, C, D, E, F.`,
+      severity: 'ERROR',
+    });
+  }
+  if (cp.level && cp.phase) {
+    if (cp.level === 'SD' && !['A', 'B', 'C'].includes(cp.phase)) {
+      issues.push({
+        ruleId: cp.id,
+        field: 'levelPhaseMismatch',
+        message: `Level SD hanya berlaku untuk Fase A, B, atau C (ditemukan: Fase ${cp.phase}).`,
+        severity: 'ERROR',
+      });
+    } else if (cp.level === 'SMP' && cp.phase !== 'D') {
+      issues.push({
+        ruleId: cp.id,
+        field: 'levelPhaseMismatch',
+        message: `Level SMP hanya berlaku untuk Fase D (ditemukan: Fase ${cp.phase}).`,
+        severity: 'ERROR',
+      });
+    } else if (cp.level === 'SMA' && !['E', 'F'].includes(cp.phase)) {
+      issues.push({
+        ruleId: cp.id,
+        field: 'levelPhaseMismatch',
+        message: `Level SMA hanya berlaku untuk Fase E atau F (ditemukan: Fase ${cp.phase}).`,
+        severity: 'ERROR',
+      });
+    }
+  }
+
   // 3. Validasi Regulasi Rujukan (Harus terdaftar di Regulation Registry)
   if (!cp.regulationSourceId) {
     issues.push({
