@@ -207,20 +207,35 @@ export interface CPAnalysisData {
 }
 
 export interface TPItem {
-  id: string;
-  code: string; // e.g. "TP 1.1", "TP 4.1"
+  id: string; // Stable relational ID (e.g. "tp-item-1710000000000-a1b2c")
+  code: string; // Display code e.g. "TP 4.1", "TP-01"
   elementName?: string;
+  elementId?: string;
   statement: string; // Pernyataan Tujuan Pembelajaran
+  description?: string; // Alias/synonym untuk statement
   competence: string; // Kompetensi / KKO yang dituju (misal: "Menganalisis", "Menjelaskan")
   contentScope: string; // Lingkup Materi / Konsep Inti
   p3Dimensions: string[]; // Dimensi Profil Pelajar Pancasila
   order: number;
+  cpAnalysisItemIds?: string[];
 }
 
 export interface TPData {
   id: string;
   academicSettingId: string;
+  cpId?: string;
+  cpVersion?: string;
+  cpRegulationIds?: string[];
+  cpAnalysisId?: string;
+  academicYear?: string;
+  subjectCode?: string;
+  phase?: string;
   items: TPItem[];
+  workflowStatus?: WorkflowCompletionStatus;
+  needsReview?: boolean;
+  reviewReason?: string;
+  generatedBy?: 'AI' | 'TEACHER' | 'AI_EDITED_BY_TEACHER';
+  generatedAt?: string;
   basedOnCpUpdatedAt?: string;
   basedOnAnalysisUpdatedAt?: string;
   updatedAt: string;
@@ -229,7 +244,7 @@ export interface TPData {
 export interface ATPItem {
   id: string;
   stepNumber: number; // Urutan Alur Pembelajaran (1, 2, 3...)
-  tpId?: string;
+  tpId?: string; // Canonical reference to TPItem.id
   tpCode: string;
   tpStatement: string;
   materialScope: string; // Lingkup Materi
@@ -243,10 +258,14 @@ export interface ATPItem {
 export interface ATPData {
   id: string;
   academicSettingId: string;
+  tpId?: string; // Canonical reference to TPData.id
   rationale?: string; // Rasionalisasi Alur Pembelajaran
   items: ATPItem[];
   totalJP: number;
   basedOnTpUpdatedAt?: string;
+  workflowStatus?: WorkflowCompletionStatus;
+  needsReview?: boolean;
+  reviewReason?: string;
   updatedAt: string;
 }
 

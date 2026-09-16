@@ -1525,6 +1525,18 @@ export function saveCPAnalysis(analysis: CPAnalysisData): void {
     list.push(updatedAnalysis);
   }
   current.cpAnalyses = list;
+
+  // Invalidate TP if CP Analysis updated
+  const tpIdx = (current.tps || []).findIndex((t) => t.academicSettingId === analysis.academicSettingId);
+  if (tpIdx >= 0 && current.tps[tpIdx].items && current.tps[tpIdx].items.length > 0) {
+    current.tps[tpIdx] = {
+      ...current.tps[tpIdx],
+      needsReview: true,
+      reviewReason: 'Analisis CP rujukan telah diperbarui.',
+      updatedAt: new Date().toISOString(),
+    };
+  }
+
   saveAppStorage(current);
 }
 
@@ -1564,6 +1576,18 @@ export function saveCP(cp: CPData): void {
   } else {
     current.cps.push(updatedCP);
   }
+
+  // Invalidate TP if CP updated
+  const tpIdx = (current.tps || []).findIndex((t) => t.academicSettingId === cp.academicSettingId);
+  if (tpIdx >= 0 && current.tps[tpIdx].items && current.tps[tpIdx].items.length > 0) {
+    current.tps[tpIdx] = {
+      ...current.tps[tpIdx],
+      needsReview: true,
+      reviewReason: 'Capaian Pembelajaran (CP) rujukan telah diperbarui.',
+      updatedAt: new Date().toISOString(),
+    };
+  }
+
   saveAppStorage(current);
 }
 

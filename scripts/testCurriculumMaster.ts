@@ -1219,7 +1219,7 @@ async function runCurriculumMasterTests() {
     const res = resolveCPContext({
       subjectCode: item.subject,
       phase: item.phase,
-      level: item.level,
+      level: item.level as any,
       academicYear: '2026/2027',
     });
     assert(
@@ -1241,6 +1241,113 @@ async function runCurriculumMasterTests() {
   assert(
     cpWithoutVersion.cpVersion === undefined,
     'CP tanpa cpVersion tidak otomatis diberi default string "2026"'
+  );
+
+  // TEST 37: TP Canonical Domain Model & Workflow Validation
+  console.log('\n--- 37. TP Canonical Domain Model & Workflow Validation ---');
+  const { validateTPDataWorkflow } = await import('../src/services/cpWorkflowService');
+
+  // a. Empty TP -> BELUM_DIMULAI
+  const emptyTPRes = validateTPDataWorkflow({
+    id: 'tp-1',
+    academicSettingId: 'setting-1',
+    items: [],
+    updatedAt: new Date().toISOString(),
+  });
+  assert(
+    emptyTPRes.status === 'BELUM_DIMULAI' && emptyTPRes.isSiap === false,
+    'TP tanpa items mengembalikan status BELUM_DIMULAI'
+  );
+
+  // b. Valid TP -> SIAP
+  const validTP: any = {
+    id: 'tp-2',
+    academicSettingId: 'setting-1',
+    items: [
+      {
+        id: 'tp-item-101',
+        code: 'TP 4.1',
+        statement: 'Peserta didik mampu menganalisis gagasan pokok teks narasi secara kritis.',
+        competence: 'Menganalisis',
+        contentScope: 'Teks Narasi',
+        p3Dimensions: ['Bernalar Kritis'],
+        order: 1,
+      },
+    ],
+    updatedAt: new Date().toISOString(),
+  };
+  const validTPRes = validateTPDataWorkflow(validTP);
+  assert(
+    validTPRes.status === 'SIAP' && validTPRes.isSiap === true,
+    'TP dengan data lengkap dan valid mengembalikan status SIAP'
+  );
+
+  // c. TP with item missing statement -> PERLU_DILENGKAPI
+  const invalidTP: any = {
+    id: 'tp-3',
+    academicSettingId: 'setting-1',
+    items: [
+      {
+        id: 'tp-item-102',
+        code: 'TP 4.2',
+        statement: '',
+        competence: '',
+        contentScope: '',
+        p3Dimensions: [],
+        order: 1,
+      },
+    ],
+    updatedAt: new Date().toISOString(),
+  };
+  const invalidTPRes = validateTPDataWorkflow(invalidTP);
+  assert(
+    invalidTPRes.status === 'PERLU_DILENGKAPI' && invalidTPRes.isSiap === false,
+    'TP dengan item tanpa kalimat rumusan mengembalikan PERLU_DILENGKAPI'
+  );
+
+  // d. Duplicate Stable Item IDs -> PERLU_DILENGKAPI
+  const duplicateIdTP: any = {
+    id: 'tp-4',
+    academicSettingId: 'setting-1',
+    items: [
+      {
+        id: 'tp-item-same-id',
+        code: 'TP 4.1',
+        statement: 'Rumusan 1',
+        competence: 'KKO 1',
+        contentScope: 'Scope 1',
+        p3Dimensions: [],
+        order: 1,
+      },
+      {
+        id: 'tp-item-same-id',
+        code: 'TP 4.2',
+        statement: 'Rumusan 2',
+        competence: 'KKO 2',
+        contentScope: 'Scope 2',
+        p3Dimensions: [],
+        order: 2,
+      },
+    ],
+    updatedAt: new Date().toISOString(),
+  };
+  const dupIdRes = validateTPDataWorkflow(duplicateIdTP);
+  assert(
+    dupIdRes.status === 'PERLU_DILENGKAPI' &&
+      dupIdRes.issues.some((i) => i.includes('duplikasi Stable ID')),
+    'TP dengan duplikasi Stable ID mendeteksi isu validasi'
+  );
+
+  // e. Flagged needsReview -> PERLU_DILENGKAPI
+  const reviewTP: any = {
+    ...validTP,
+    needsReview: true,
+    reviewReason: 'CP rujukan telah diperbarui.',
+  };
+  const reviewTPRes = validateTPDataWorkflow(reviewTP);
+  assert(
+    reviewTPRes.status === 'PERLU_DILENGKAPI' && reviewTPRes.isSiap === false,
+    'TP berstatus needsReview=true mengembalikan status PERLU_DILENGKAPI'
   );
 
   console.log('\n===========================================================');

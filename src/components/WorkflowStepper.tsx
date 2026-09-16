@@ -33,6 +33,7 @@ import { getCurriculumTypeFromSetting, isK13 } from '../services/curriculumRoute
 import {
   validateCPDataWorkflow,
   validateCPAnalysisDataWorkflow,
+  validateTPDataWorkflow,
 } from '../services/cpWorkflowService';
 
 interface WorkflowStepperProps {
@@ -74,6 +75,7 @@ export const WorkflowStepper: React.FC<WorkflowStepperProps> = ({
   // Merdeka steps completion & gating
   const cpValidation = validateCPDataWorkflow(cp, academicSetting);
   const cpAnalysisValidation = validateCPAnalysisDataWorkflow(cpAnalysis, cp);
+  const tpValidation = validateTPDataWorkflow(tp, cp, cpAnalysis, academicSetting);
 
   const isCPComplete = cpValidation.isSiap || !!(
     (cp?.generalDescription && cp.generalDescription.trim().length > 10) ||
@@ -84,7 +86,11 @@ export const WorkflowStepper: React.FC<WorkflowStepperProps> = ({
     cpAnalysis.items.length > 0 &&
     !cpAnalysis.needsReview
   );
-  const isTPComplete = !!(tp?.items && tp.items.length > 0);
+  const isTPComplete = tpValidation.isSiap || !!(
+    tp?.items &&
+    tp.items.length > 0 &&
+    !tp.needsReview
+  );
   const isATPComplete = !!(atp?.items && atp.items.length > 0);
 
   // K13 steps completion & gating

@@ -11,6 +11,7 @@ export interface CPAnalysisResult {
 export interface GenerateTPParams {
   cpGeneral: string;
   cpElements: CPElem[];
+  cpAnalysisItems?: any[];
   subject: string;
   grade: string;
   phase: string;
@@ -102,16 +103,21 @@ export async function generateTPWithAI(params: GenerateTPParams): Promise<TPItem
 
     const data = await res.json();
     const rawItems = data.items || [];
-    return rawItems.map((item: any, idx: number) => ({
-      id: `tp-ai-${Date.now()}-${idx}`,
-      code: item.code || `TP ${idx + 1}`,
-      elementName: item.elementName || 'Umum',
-      statement: item.statement,
-      competence: item.competence || 'Memahami',
-      contentScope: item.contentScope || 'Materi Pokok',
-      p3Dimensions: item.p3Dimensions || ['Bernalar Kritis'],
-      order: idx + 1,
-    }));
+    return rawItems.map((item: any, idx: number) => {
+      const stmt = item.statement || item.description || '';
+      return {
+        id: `tp-item-${Date.now()}-${idx}-${Math.random().toString(36).substring(2, 6)}`,
+        code: item.code || `TP ${idx + 1}`,
+        elementName: item.elementName || 'Umum',
+        statement: stmt,
+        description: stmt,
+        competence: item.competence || 'Memahami',
+        contentScope: item.contentScope || 'Materi Pokok',
+        p3Dimensions: Array.isArray(item.p3Dimensions) ? item.p3Dimensions : ['Bernalar Kritis'],
+        order: idx + 1,
+        cpAnalysisItemIds: Array.isArray(item.cpAnalysisItemIds) ? item.cpAnalysisItemIds : [],
+      };
+    });
   } catch (err) {
     throw new Error(formatAIErrorMessage(err, 'merumuskan Tujuan Pembelajaran'));
   }

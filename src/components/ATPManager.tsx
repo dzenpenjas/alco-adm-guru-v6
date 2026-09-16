@@ -102,18 +102,24 @@ export const ATPManager: React.FC<ATPManagerProps> = ({
         totalHoursPerWeek: context.totalHoursPerWeek || 5,
       });
 
-      const formattedItems: ATPItem[] = generated.items.map((item, idx) => ({
-        id: `atp-item-${Date.now()}-${idx}`,
-        stepNumber: item.stepNumber || idx + 1,
-        tpCode: item.tpCode,
-        tpStatement: item.tpStatement,
-        materialScope: item.materialScope,
-        jp: item.jp || 6,
-        p3Dimensions: item.p3Dimensions || ['Bernalar Kritis'],
-        assessmentPlan: item.assessmentPlan || 'Formatif: Unjuk Kerja; Sumatif: Tes Tertulis',
-        glossary: item.glossary || '',
-        resources: item.resources || 'Buku Guru dan Buku Siswa Kemendikdasmen',
-      }));
+      const formattedItems: ATPItem[] = generated.items.map((item, idx) => {
+        const matchedTP = tp.items.find(
+          (t) => t.code === item.tpCode || t.statement === item.tpStatement
+        );
+        return {
+          id: `atp-item-${Date.now()}-${idx}-${Math.random().toString(36).substring(2, 6)}`,
+          stepNumber: item.stepNumber || idx + 1,
+          tpId: matchedTP?.id || (item as any).tpId,
+          tpCode: item.tpCode,
+          tpStatement: item.tpStatement,
+          materialScope: item.materialScope,
+          jp: item.jp || 6,
+          p3Dimensions: item.p3Dimensions || ['Bernalar Kritis'],
+          assessmentPlan: item.assessmentPlan || 'Formatif: Unjuk Kerja; Sumatif: Tes Tertulis',
+          glossary: item.glossary || '',
+          resources: item.resources || 'Buku Guru dan Buku Siswa Kemendikdasmen',
+        };
+      });
 
       setRationale(generated.rationale);
       setItems(formattedItems);
@@ -184,8 +190,9 @@ export const ATPManager: React.FC<ATPManagerProps> = ({
     const firstTP = tp.items[0];
     const gradeNum = context.grade.replace(/[^0-9]/g, '') || '4';
     setCurrentItem({
-      id: `atp-${Date.now()}`,
+      id: `atp-item-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
       stepNumber: nextStep,
+      tpId: firstTP?.id,
       tpCode: firstTP?.code || `TP ${gradeNum}.${nextStep}`,
       tpStatement: firstTP?.statement || '',
       materialScope: firstTP?.contentScope || '',
