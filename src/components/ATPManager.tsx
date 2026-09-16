@@ -105,17 +105,22 @@ export const ATPManager: React.FC<ATPManagerProps> = ({
 
       const formattedItems: ATPItem[] = generated.items.map((item, idx) => {
         const matchedTP = tp.items.find(
-          (t) => t.code === item.tpCode || t.statement === item.tpStatement
+          (t) => t.id === (item as any).tpId
+        ) || tp.items.find(
+          (t) => t.code && t.code.trim().toLowerCase() === (item.tpCode || '').trim().toLowerCase()
+        ) || tp.items.find(
+          (t) => t.statement && t.statement.trim().toLowerCase() === (item.tpStatement || '').trim().toLowerCase()
         );
         return {
           id: `atp-item-${Date.now()}-${idx}-${Math.random().toString(36).substring(2, 6)}`,
           stepNumber: item.stepNumber || idx + 1,
-          tpId: matchedTP?.id || (item as any).tpId,
-          tpCode: item.tpCode,
-          tpStatement: item.tpStatement,
-          materialScope: item.materialScope,
+          tpId: matchedTP?.id || (item as any).tpId || '',
+          tpCode: matchedTP?.code || item.tpCode || `TP ${idx + 1}`,
+          tpStatement: matchedTP?.statement || item.tpStatement || '',
+          materialScope: item.materialScope || matchedTP?.contentScope || '',
           jp: item.jp || 6,
-          p3Dimensions: item.p3Dimensions || ['Bernalar Kritis'],
+          semester: (context.semester?.toString().includes('2') ? 2 : 1) as 1 | 2,
+          p3Dimensions: item.p3Dimensions && item.p3Dimensions.length > 0 ? item.p3Dimensions : matchedTP?.p3Dimensions || ['Bernalar Kritis'],
           assessmentPlan: item.assessmentPlan || 'Formatif: Unjuk Kerja; Sumatif: Tes Tertulis',
           glossary: item.glossary || '',
           resources: item.resources || 'Buku Guru dan Buku Siswa Kemendikdasmen',
@@ -129,9 +134,18 @@ export const ATPManager: React.FC<ATPManagerProps> = ({
       const updated: ATPData = {
         ...atp,
         academicSettingId: academicSetting.id,
+        tpDataId: tp.id,
+        tpId: tp.id,
+        academicYear: context.academicYear,
+        subjectCode: context.subjectCode || context.subject,
+        phase: context.phase,
         rationale: generated.rationale,
         items: formattedItems,
         totalJP: formattedItems.reduce((acc, curr) => acc + (Number(curr.jp) || 0), 0),
+        generatedBy: 'AI',
+        generatedAt: new Date().toISOString(),
+        needsReview: false,
+        reviewReason: undefined,
         basedOnTpUpdatedAt: tp.updatedAt || new Date().toISOString(),
         updatedAt: new Date().toISOString(),
       };
@@ -396,55 +410,85 @@ export const ATPManager: React.FC<ATPManagerProps> = ({
               <thead>
                 <tr className="bg-slate-900 text-white font-semibold">
                   <th className="p-3 w-12 text-center">No.</th>
-                  <th className="p-3 w-20">Kode</th>
-                  <th className="p-3 min-w-[240px]">Tujuan Pembelajaran</th>
-                  <th className="p-3 min-w-[150px]">Lingkup Materi</th>
-                  <th className="p-3 min-w-[130px]">Profil Pancasila</th>
-                  <th className="p-3 min-w-[160px]">Rencana Asesmen</th>
-                  <th className="p-3 w-16 text-center">JP</th>
+                  <th className="p-3 w-28">Kode & Status</th>
+                  <th className="p-3 min-w-[240px]">Tujuan Pembelajaran (TP Canonical)</th>
+                  <th className="p-3 min-w-[140px]">Lingkup Materi</th>
+                  <th className="p-3 min-w-[120px]">Profil Pancasila</th>
+                  <th className="p-3 min-w-[150px]">Rencana Asesmen</th>
+                  <th className="p-3 w-20 text-center">Sem / JP</th>
                   <th className="p-3 w-24 text-center">Aksi</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200 bg-white">
-                {items.map((item, idx) => (
-                  <tr key={item.id} className="hover:bg-slate-50/80 transition-colors">
-                    <td className="p-3 text-center font-bold text-slate-700 bg-slate-50/50">
-                      {idx + 1}
-                    </td>
-                    <td className="p-3 font-mono font-bold text-blue-900 whitespace-nowrap">
-                      {item.tpCode}
-                    </td>
-                    <td className="p-3 font-medium text-slate-900 leading-relaxed">
-                      {item.tpStatement}
-                      {item.glossary && (
-                        <div className="text-[11px] text-slate-500 mt-1">
-                          <span className="font-semibold text-slate-700">Glosarium:</span> {item.glossary}
+                {items.map((item, idx) => {
+                  const refStatus = resolveATPItemTPReference(item, tp.items);
+                  return (
+                    <tr key={item.id} className="hover:bg-slate-50/80 transition-colors">
+                      <td className="p-3 text-center font-bold text-slate-700 bg-slate-50/50">
+                        {idx + 1}
+                      </td>
+                      <td className="p-3 font-mono text-xs">
+                        <div className="font-bold text-blue-900">{item.tpCode || '-'}</div>
+                        {refStatus.status === 'DANGLING_REFERENCE' && (
+                          <span className="inline-block mt-0.5 px-1.5 py-0.5 rounded text-[9px] font-bold bg-rose-100 text-rose-800 border border-rose-200">
+                            ⚠️ TP Terhapus
+                          </span>
+                        )}
+                        {refStatus.status === 'AMBIGUOUS_REFERENCE' && (
+                          <span className="inline-block mt-0.5 px-1.5 py-0.5 rounded text-[9px] font-bold bg-amber-100 text-amber-800 border border-amber-200">
+                            ⚠️ TP Ambigu
+                          </span>
+                        )}
+                        {refStatus.status === 'UNRESOLVED_REFERENCE' && (
+                          <span className="inline-block mt-0.5 px-1.5 py-0.5 rounded text-[9px] font-bold bg-slate-100 text-slate-700 border border-slate-200">
+                            ⚠️ Terputus
+                          </span>
+                        )}
+                        {refStatus.status === 'LEGACY_MIGRATED' && (
+                          <span className="inline-block mt-0.5 px-1.5 py-0.5 rounded text-[9px] font-bold bg-blue-50 text-blue-700 border border-blue-200">
+                            ℹ️ Migrasi
+                          </span>
+                        )}
+                        {refStatus.status === 'RESOLVED_REFERENCE' && (
+                          <span className="inline-block mt-0.5 px-1.5 py-0.5 rounded text-[9px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                            ✓ Canonical
+                          </span>
+                        )}
+                      </td>
+                      <td className="p-3 font-medium text-slate-900 leading-relaxed">
+                        {item.tpStatement || refStatus.canonicalTPItem?.statement || '-'}
+                        {item.glossary && (
+                          <div className="text-[11px] text-slate-500 mt-1">
+                            <span className="font-semibold text-slate-700">Glosarium:</span> {item.glossary}
+                          </div>
+                        )}
+                      </td>
+                      <td className="p-3 text-slate-700 font-semibold">{item.materialScope || '-'}</td>
+                      <td className="p-3 text-blue-800">
+                        {item.p3Dimensions && item.p3Dimensions.length > 0 ? (
+                          <div className="flex flex-wrap gap-1">
+                            {item.p3Dimensions.map((d, di) => (
+                              <span
+                                key={di}
+                                className="px-1.5 py-0.5 rounded bg-blue-50 text-[10px] font-medium text-blue-700 border border-blue-100"
+                              >
+                                {d}
+                              </span>
+                            ))}
+                          </div>
+                        ) : (
+                          '-'
+                        )}
+                      </td>
+                      <td className="p-3 text-slate-600 text-[11px] leading-relaxed">
+                        {item.assessmentPlan || '-'}
+                      </td>
+                      <td className="p-3 text-center bg-slate-50/50">
+                        <div className="font-bold text-slate-900">{item.jp} JP</div>
+                        <div className="text-[10px] text-slate-500 font-medium">
+                          Sem {item.semester || 1}
                         </div>
-                      )}
-                    </td>
-                    <td className="p-3 text-slate-700 font-semibold">{item.materialScope || '-'}</td>
-                    <td className="p-3 text-blue-800">
-                      {item.p3Dimensions && item.p3Dimensions.length > 0 ? (
-                        <div className="flex flex-wrap gap-1">
-                          {item.p3Dimensions.map((d, di) => (
-                            <span
-                              key={di}
-                              className="px-1.5 py-0.5 rounded bg-blue-50 text-[10px] font-medium text-blue-700 border border-blue-100"
-                            >
-                              {d}
-                            </span>
-                          ))}
-                        </div>
-                      ) : (
-                        '-'
-                      )}
-                    </td>
-                    <td className="p-3 text-slate-600 text-[11px] leading-relaxed">
-                      {item.assessmentPlan || '-'}
-                    </td>
-                    <td className="p-3 text-center font-bold text-slate-900 bg-slate-50/50">
-                      {item.jp} JP
-                    </td>
+                      </td>
                     <td className="p-3 text-center">
                       <div className="flex items-center justify-center gap-1">
                         <button
@@ -480,8 +524,9 @@ export const ATPManager: React.FC<ATPManagerProps> = ({
                       </div>
                     </td>
                   </tr>
-                ))}
-              </tbody>
+                );
+              })}
+            </tbody>
               <tfoot>
                 <tr className="bg-slate-100 font-bold text-slate-900 border-t-2 border-slate-300">
                   <td colSpan={6} className="p-3 text-right">
@@ -544,6 +589,55 @@ export const ATPManager: React.FC<ATPManagerProps> = ({
             </div>
 
             <form onSubmit={handleSaveItemModal} className="space-y-4">
+              {/* Select Canonical TP */}
+              <div>
+                <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
+                  Pilih Tujuan Pembelajaran (TP Canonical) <span className="text-rose-500">*</span>
+                </label>
+                <select
+                  required
+                  value={currentItem.tpId || ''}
+                  onChange={(e) => {
+                    const selectedId = e.target.value;
+                    const matched = tp.items.find((t) => t.id === selectedId);
+                    if (matched) {
+                      setCurrentItem({
+                        ...currentItem,
+                        tpId: matched.id,
+                        tpCode: matched.code,
+                        tpStatement: matched.statement,
+                        materialScope: currentItem.materialScope || matched.contentScope || '',
+                        p3Dimensions: matched.p3Dimensions && matched.p3Dimensions.length > 0 ? matched.p3Dimensions : currentItem.p3Dimensions,
+                      });
+                    }
+                  }}
+                  className="w-full text-sm px-3 py-2 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-600 font-medium"
+                >
+                  <option value="">-- Pilih Butir TP Canonical --</option>
+                  {tp.items.map((tItem) => (
+                    <option key={tItem.id} value={tItem.id}>
+                      [{tItem.code}] {tItem.statement.substring(0, 90)}{tItem.statement.length > 90 ? '...' : ''}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* Read-only Canonical TP Statement */}
+              {currentItem.tpStatement && (
+                <div className="bg-slate-50 border border-slate-200 rounded-xl p-3 text-xs text-slate-700 space-y-1">
+                  <div className="flex items-center justify-between text-[11px] font-bold text-slate-500 uppercase">
+                    <span>Rumusan TP Canonical</span>
+                    <span className="text-blue-700 font-semibold text-[10px] bg-blue-50 px-2 py-0.5 rounded border border-blue-200">
+                      Read-Only
+                    </span>
+                  </div>
+                  <p className="font-medium text-slate-900 leading-relaxed">{currentItem.tpStatement}</p>
+                  <p className="text-[10px] text-slate-500 italic">
+                    * Rumusan TP bersifat terpusat. Untuk mengubah kalimat TP, silakan kembali ke Tahap 05 (TP).
+                  </p>
+                </div>
+              )}
+
               <div className="grid grid-cols-3 gap-3">
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
@@ -562,15 +656,18 @@ export const ATPManager: React.FC<ATPManagerProps> = ({
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                    Kode TP
+                    Semester
                   </label>
-                  <input
-                    type="text"
-                    required
-                    value={currentItem.tpCode}
-                    onChange={(e) => setCurrentItem({ ...currentItem, tpCode: e.target.value })}
-                    className="w-full text-sm px-3 py-2 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-600"
-                  />
+                  <select
+                    value={currentItem.semester || 1}
+                    onChange={(e) =>
+                      setCurrentItem({ ...currentItem, semester: (parseInt(e.target.value, 10) || 1) as 1 | 2 })
+                    }
+                    className="w-full text-sm px-3 py-2 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-600 font-medium"
+                  >
+                    <option value={1}>Semester 1</option>
+                    <option value={2}>Semester 2</option>
+                  </select>
                 </div>
                 <div>
                   <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
@@ -587,19 +684,6 @@ export const ATPManager: React.FC<ATPManagerProps> = ({
                     className="w-full text-sm px-3 py-2 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-600"
                   />
                 </div>
-              </div>
-
-              <div>
-                <label className="block text-xs font-bold text-slate-700 uppercase mb-1">
-                  Rumusan Tujuan Pembelajaran <span className="text-rose-500">*</span>
-                </label>
-                <textarea
-                  rows={2}
-                  required
-                  value={currentItem.tpStatement}
-                  onChange={(e) => setCurrentItem({ ...currentItem, tpStatement: e.target.value })}
-                  className="w-full text-sm p-3 rounded-xl border border-slate-300 focus:outline-hidden focus:ring-2 focus:ring-blue-600 leading-relaxed"
-                />
               </div>
 
               <div className="grid grid-cols-2 gap-3">

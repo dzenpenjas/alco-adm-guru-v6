@@ -28,7 +28,7 @@ import {
   CPAnalysisData,
 } from '../types';
 import { getCurriculumTypeFromSetting, isK13, isMerdeka } from './curriculumRouter';
-import { validateATPReferences, normalizeATPReferences } from './cpWorkflowService';
+import { validateATPReferences, normalizeATPReferences, validateATPDataWorkflow } from './cpWorkflowService';
 import {
   INITIAL_PROFILES,
   INITIAL_SCHOOL,
@@ -1609,15 +1609,14 @@ export function saveTP(tp: TPData): void {
   const atpIdx = (current.atps || []).findIndex((a) => a.academicSettingId === tp.academicSettingId);
   if (atpIdx >= 0 && current.atps[atpIdx].items && current.atps[atpIdx].items.length > 0) {
     const atpObj = current.atps[atpIdx];
-    const val = validateATPReferences(atpObj, updatedTP);
-    if (!val.isSiap) {
-      current.atps[atpIdx] = {
-        ...atpObj,
-        needsReview: true,
-        reviewReason: 'Tujuan Pembelajaran (TP) acuan telah diperbarui, beberapa referensi alur perlu disesuaikan.',
-        updatedAt: new Date().toISOString(),
-      };
-    }
+    const val = validateATPDataWorkflow(atpObj, updatedTP);
+    current.atps[atpIdx] = {
+      ...atpObj,
+      workflowStatus: val.status,
+      needsReview: true,
+      reviewReason: 'Tujuan Pembelajaran (TP) acuan telah diperbarui, alur ATP perlu ditinjau ulang.',
+      updatedAt: new Date().toISOString(),
+    };
   }
 
   saveAppStorage(current);
@@ -1628,10 +1627,20 @@ export function saveATP(atp: ATPData): void {
   const tp = current.tps.find((t) => t.academicSettingId === atp.academicSettingId);
   const normalizedATP = normalizeATPReferences(atp, tp);
 
+  const val = validateATPDataWorkflow(normalizedATP, tp);
   const totalJP = (normalizedATP?.items || []).reduce((acc, curr) => acc + (Number(curr.jp) || 0), 0);
   const updatedATP: ATPData = {
     ...normalizedATP,
+    tpDataId: tp?.id || normalizedATP.tpDataId || normalizedATP.tpId,
+    tpId: tp?.id || normalizedATP.tpId,
+    academicYear: atp.academicYear || tp?.academicYear,
+    subjectCode: atp.subjectCode || tp?.subjectCode,
+    phase: atp.phase || tp?.phase,
     totalJP,
+    workflowStatus: val.status,
+    needsReview: val.issues.length > 0 ? true : false,
+    reviewReason: val.issues.length > 0 ? val.issues.join('; ') : undefined,
+    basedOnTpUpdatedAt: tp?.updatedAt || atp.basedOnTpUpdatedAt || new Date().toISOString(),
     updatedAt: new Date().toISOString(),
   };
 

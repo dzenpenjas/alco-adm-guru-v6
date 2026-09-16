@@ -245,10 +245,11 @@ export interface ATPItem {
   id: string;
   stepNumber: number; // Urutan Alur Pembelajaran (1, 2, 3...)
   tpId?: string; // Canonical reference to TPItem.id
-  tpCode: string;
-  tpStatement: string;
+  tpCode?: string; // Display cache / legacy compatibility
+  tpStatement?: string; // Display cache / legacy compatibility
   materialScope: string; // Lingkup Materi
   jp: number; // Alokasi Jam Pelajaran (misal 6 JP)
+  semester?: 1 | 2; // Semester 1 atau 2
   p3Dimensions: string[]; // Profil Pelajar Pancasila
   assessmentPlan: string; // Asesmen Awal, Formatif, Sumatif
   glossary: string; // Kata Kunci / Glosarium
@@ -258,14 +259,20 @@ export interface ATPItem {
 export interface ATPData {
   id: string;
   academicSettingId: string;
-  tpId?: string; // Canonical reference to TPData.id
+  tpDataId?: string; // Canonical reference to TPData.id
+  tpId?: string; // Canonical reference to TPData.id (compatibility)
+  academicYear?: string;
+  subjectCode?: string;
+  phase?: string;
   rationale?: string; // Rasionalisasi Alur Pembelajaran
   items: ATPItem[];
   totalJP: number;
-  basedOnTpUpdatedAt?: string;
   workflowStatus?: WorkflowCompletionStatus;
   needsReview?: boolean;
   reviewReason?: string;
+  generatedBy?: 'AI' | 'TEACHER' | 'AI_EDITED_BY_TEACHER';
+  basedOnTpUpdatedAt?: string;
+  generatedAt?: string;
   updatedAt: string;
 }
 

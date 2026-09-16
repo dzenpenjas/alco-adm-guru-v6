@@ -380,11 +380,13 @@ export function resolveATPItemTPReference(
 }
 
 /**
- * Validates all ATP items against canonical TPData.
+ * Validates ATP Data and its items against canonical TPData & AcademicSetting context.
+ * Single authoritative validator for ATP workflow status.
  */
-export function validateATPReferences(
+export function validateATPDataWorkflow(
   atp?: ATPData,
-  tp?: TPData
+  tp?: TPData,
+  academicSetting?: AcademicSetting
 ): {
   status: WorkflowCompletionStatus;
   isSiap: boolean;
@@ -403,13 +405,43 @@ export function validateATPReferences(
     };
   }
 
+  // Flag review check
+  if (atp.needsReview) {
+    issues.push(
+      atp.reviewReason || 'Alur Tujuan Pembelajaran (ATP) memerlukan peninjauan ulang karena TP acuan telah diperbarui.'
+    );
+  }
+
+  // Academic Setting check
+  if (academicSetting && atp.academicSettingId && atp.academicSettingId !== academicSetting.id) {
+    issues.push(`ATP terikat pada Academic Setting lain (${atp.academicSettingId}).`);
+  }
+
+  // Provenance check against TPData
+  if (tp?.id) {
+    if (atp.tpId && atp.tpId !== tp.id) {
+      issues.push(`ID TPData pada ATP (${atp.tpId}) tidak sesuai dengan TP rujukan (${tp.id}).`);
+    }
+    if (atp.tpDataId && atp.tpDataId !== tp.id) {
+      issues.push(`ID TPData pada ATP (${atp.tpDataId}) tidak sesuai dengan TP rujukan (${tp.id}).`);
+    }
+  }
+
+  // Items validation
   const tpItems = tp?.items || [];
   for (let i = 0; i < atp.items.length; i++) {
     const item = atp.items[i];
     const res = resolveATPItemTPReference(item, tpItems);
     details.push(res);
-    if (res.status === 'DANGLING_REFERENCE' || res.status === 'AMBIGUOUS_REFERENCE' || res.status === 'UNRESOLVED_REFERENCE') {
+    if (
+      res.status === 'DANGLING_REFERENCE' ||
+      res.status === 'AMBIGUOUS_REFERENCE' ||
+      res.status === 'UNRESOLVED_REFERENCE'
+    ) {
       if (res.issue) issues.push(res.issue);
+    }
+    if (item.jp !== undefined && Number(item.jp) <= 0) {
+      issues.push(`Langkah ATP ke-${item.stepNumber || i + 1} belum memiliki alokasi JP yang valid.`);
     }
   }
 
@@ -425,9 +457,24 @@ export function validateATPReferences(
   return {
     status: 'SIAP',
     isSiap: true,
-    issues,
+    issues: [],
     details,
   };
+}
+
+/**
+ * Validates all ATP items against canonical TPData.
+ */
+export function validateATPReferences(
+  atp?: ATPData,
+  tp?: TPData
+): {
+  status: WorkflowCompletionStatus;
+  isSiap: boolean;
+  issues: string[];
+  details: ATPReferenceResult[];
+} {
+  return validateATPDataWorkflow(atp, tp);
 }
 
 /**
