@@ -42,6 +42,12 @@ import {
   normalizeCalendarDayStatus,
   validateCalendarCompleteness,
 } from '../src/services/jpEngine';
+import {
+  validateTPDataWorkflow,
+  validateATPReferences,
+  resolveATPItemTPReference,
+  normalizeATPReferences,
+} from '../src/services/cpWorkflowService';
 import { normalizeCPVerificationStatus } from '../src/types';
 
 function assert(condition: boolean, message: string) {
@@ -1348,6 +1354,143 @@ async function runCurriculumMasterTests() {
   assert(
     reviewTPRes.status === 'PERLU_DILENGKAPI' && reviewTPRes.isSiap === false,
     'TP berstatus needsReview=true mengembalikan status PERLU_DILENGKAPI'
+  );
+
+  // TEST 20: ATP Reference Resolution & Validation Test Suite
+  console.log('\n--- 20. Validasi & Resolusi Referensi ATP -> TP ---');
+
+  const mockTPList: any = {
+    id: 'tp-set-1',
+    academicSettingId: 'setting-test',
+    items: [
+      {
+        id: 'tp-id-001',
+        code: 'TP 4.1',
+        statement: 'Peserta didik dapat menyimak teks cerita.',
+        competence: 'Menyimak',
+        contentScope: 'Teks Cerita',
+        p3Dimensions: ['Bernalar Kritis'],
+      },
+      {
+        id: 'tp-id-002',
+        code: 'TP 4.2',
+        statement: 'Peserta didik dapat menulis teks eksposisi.',
+        competence: 'Menulis',
+        contentScope: 'Teks Eksposisi',
+        p3Dimensions: ['Mandiri'],
+      },
+      {
+        id: 'tp-id-003a',
+        code: 'TP 4.3',
+        statement: 'Peserta didik dapat berbicara depan umum (Versi A).',
+      },
+      {
+        id: 'tp-id-003b',
+        code: 'TP 4.3',
+        statement: 'Peserta didik dapat berbicara depan umum (Versi B).',
+      },
+    ],
+    updatedAt: new Date().toISOString(),
+  };
+
+  // Case 20a: Canonical tpId Match
+  const itemCanonical: any = {
+    id: 'atp-1',
+    stepNumber: 1,
+    tpId: 'tp-id-001',
+    tpCode: 'TP 4.1',
+    tpStatement: 'Peserta didik dapat menyimak teks cerita.',
+  };
+  const resCanonical = resolveATPItemTPReference(itemCanonical, mockTPList.items);
+  assert(
+    resCanonical.status === 'RESOLVED_REFERENCE' && resCanonical.canonicalTPItem?.id === 'tp-id-001' && resCanonical.tpId === 'tp-id-001',
+    'Canonical tpId matching mengembalikan status RESOLVED_REFERENCE dengan ID tepat'
+  );
+
+  // Case 20b: Legacy Migration via Unique Code
+  const itemLegacyCode: any = {
+    id: 'atp-2',
+    stepNumber: 2,
+    tpCode: 'TP 4.2',
+    tpStatement: 'Peserta didik dapat menulis teks eksposisi.',
+  };
+  const resLegacyCode = resolveATPItemTPReference(itemLegacyCode, mockTPList.items);
+  assert(
+    resLegacyCode.status === 'LEGACY_MIGRATED' && resLegacyCode.canonicalTPItem?.id === 'tp-id-002' && resLegacyCode.tpId === 'tp-id-002',
+    'Legacy item tanpa tpId teresolusi via kode unik TP 4.2 -> tp-id-002'
+  );
+
+  // Case 20c: Ambiguous Match (multiple TPs share code TP 4.3)
+  const itemAmbiguous: any = {
+    id: 'atp-3',
+    stepNumber: 3,
+    tpCode: 'TP 4.3',
+    tpStatement: 'Statement yang berbeda',
+  };
+  const resAmbiguous = resolveATPItemTPReference(itemAmbiguous, mockTPList.items);
+  assert(
+    resAmbiguous.status === 'AMBIGUOUS_REFERENCE',
+    'Kode TP yang duplikat tanpa tpId terdeteksi sebagai AMBIGUOUS_REFERENCE (bukan silent match)'
+  );
+
+  // Case 20d: Dangling Reference (tpId pointing to deleted TP)
+  const itemDangling: any = {
+    id: 'atp-4',
+    stepNumber: 4,
+    tpId: 'tp-id-deleted-999',
+    tpCode: 'TP 4.99',
+    tpStatement: 'TP yang sudah dihapus',
+  };
+  const resDangling = resolveATPItemTPReference(itemDangling, mockTPList.items);
+  assert(
+    resDangling.status === 'DANGLING_REFERENCE',
+    'tpId yang mereferensikan TP non-eksisten terdeteksi sebagai DANGLING_REFERENCE'
+  );
+
+  // Case 20e: Unresolved Reference
+  const itemUnresolved: any = {
+    id: 'atp-5',
+    stepNumber: 5,
+    tpCode: 'TP X.Y',
+    tpStatement: 'Tidak cocok dengan apapun',
+  };
+  const resUnresolved = resolveATPItemTPReference(itemUnresolved, mockTPList.items);
+  assert(
+    resUnresolved.status === 'UNRESOLVED_REFERENCE',
+    'Item tanpa match terdeteksi sebagai UNRESOLVED_REFERENCE'
+  );
+
+  // Case 20f: Normalization of legacy ATPData
+  const legacyATP: any = {
+    id: 'atp-doc-1',
+    academicSettingId: 'setting-test',
+    items: [itemCanonical, itemLegacyCode],
+    updatedAt: new Date().toISOString(),
+  };
+  const normalizedATP = normalizeATPReferences(legacyATP, mockTPList);
+  assert(
+    normalizedATP.items[0].tpId === 'tp-id-001' && normalizedATP.items[1].tpId === 'tp-id-002',
+    'normalizeATPReferences berhasil mengonversi legacy items menjadi canonical tpId'
+  );
+
+  // Case 20g: Full ATP Validation (Valid case)
+  const validATPVal = validateATPReferences(normalizedATP, mockTPList);
+  assert(
+    validATPVal.status === 'SIAP' && validATPVal.isSiap === true && validATPVal.issues.length === 0,
+    'ATP dengan seluruh referensi valid mengembalikan status SIAP'
+  );
+
+  // Case 20h: Full ATP Validation (With Dangling & Ambiguous issues)
+  const flawedATP: any = {
+    id: 'atp-doc-2',
+    academicSettingId: 'setting-test',
+    items: [itemCanonical, itemDangling, itemAmbiguous],
+    updatedAt: new Date().toISOString(),
+  };
+  const flawedATPVal = validateATPReferences(flawedATP, mockTPList);
+  assert(
+    flawedATPVal.status !== 'SIAP' && flawedATPVal.isSiap === false && flawedATPVal.issues.length === 2,
+    'ATP dengan referensi cacat mendeteksi seluruh masalah secara akurat'
   );
 
   console.log('\n===========================================================');

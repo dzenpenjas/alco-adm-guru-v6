@@ -28,6 +28,7 @@ import {
   CPAnalysisData,
 } from '../types';
 import { getCurriculumTypeFromSetting, isK13, isMerdeka } from './curriculumRouter';
+import { validateATPReferences, normalizeATPReferences } from './cpWorkflowService';
 import {
   INITIAL_PROFILES,
   INITIAL_SCHOOL,
@@ -1603,14 +1604,33 @@ export function saveTP(tp: TPData): void {
   } else {
     current.tps.push(updatedTP);
   }
+
+  // Cascading invalidation: Check if ATP references to TP items are still valid
+  const atpIdx = (current.atps || []).findIndex((a) => a.academicSettingId === tp.academicSettingId);
+  if (atpIdx >= 0 && current.atps[atpIdx].items && current.atps[atpIdx].items.length > 0) {
+    const atpObj = current.atps[atpIdx];
+    const val = validateATPReferences(atpObj, updatedTP);
+    if (!val.isSiap) {
+      current.atps[atpIdx] = {
+        ...atpObj,
+        needsReview: true,
+        reviewReason: 'Tujuan Pembelajaran (TP) acuan telah diperbarui, beberapa referensi alur perlu disesuaikan.',
+        updatedAt: new Date().toISOString(),
+      };
+    }
+  }
+
   saveAppStorage(current);
 }
 
 export function saveATP(atp: ATPData): void {
   const current = loadAppStorage();
-  const totalJP = (atp?.items || []).reduce((acc, curr) => acc + (Number(curr.jp) || 0), 0);
+  const tp = current.tps.find((t) => t.academicSettingId === atp.academicSettingId);
+  const normalizedATP = normalizeATPReferences(atp, tp);
+
+  const totalJP = (normalizedATP?.items || []).reduce((acc, curr) => acc + (Number(curr.jp) || 0), 0);
   const updatedATP: ATPData = {
-    ...atp,
+    ...normalizedATP,
     totalJP,
     updatedAt: new Date().toISOString(),
   };

@@ -21,6 +21,7 @@ import {
 } from 'lucide-react';
 import { ATPData, ATPItem, TPData, CPData, AcademicSetting, TeacherProfile, ActiveContext } from '../types';
 import { generateATPWithAI, refineTextWithAI } from '../services/aiService';
+import { validateATPReferences, resolveATPItemTPReference, normalizeATPReferences } from '../services/cpWorkflowService';
 import { P3_DIMENSIONS } from '../data/curriculumDefaults';
 
 interface ATPManagerProps {

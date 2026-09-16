@@ -80,7 +80,20 @@ export const TPManager: React.FC<TPManagerProps> = ({
   const isCpUnusable = cpVerStatus === 'SUPERSEDED' || cpVerStatus === 'VERSION_CONFLICT';
 
   // Workflow validation
-  const validation = validateTPDataWorkflow({ ...tp, items }, cp, cpAnalysis, academicSetting);
+  const validation = validateTPDataWorkflow(
+    {
+      ...tp,
+      items,
+      academicSettingId: tp.academicSettingId || academicSetting.id,
+      cpId: tp.cpId || cp.id,
+      academicYear: tp.academicYear || context.academicYear,
+      subjectCode: tp.subjectCode || context.subject,
+      phase: tp.phase || context.phase,
+    },
+    cp,
+    cpAnalysis,
+    academicSetting
+  );
 
   // Integrity check: CP or Analysis changed after TP was created
   const isCPOutdated =
@@ -102,12 +115,12 @@ export const TPManager: React.FC<TPManagerProps> = ({
   // Handle Confirm Alignment
   const handleConfirmAlignment = () => {
     const updatedItems = items.map((item, idx) => ({ ...item, order: idx + 1 }));
-    const updatedTP: TPData = {
+    const candidateTP: TPData = {
       ...tp,
       academicSettingId: academicSetting.id,
       cpId: cp.id,
-      cpVersion: cp.source?.versionCode || 'TA 2026/2027',
-      cpRegulationIds: cp.source?.regulationIds || [],
+      cpVersion: cp.cpVersion ?? cp.source?.versionCode,
+      cpRegulationIds: cp.source?.regulationIds || cp.regulationIds || [],
       cpAnalysisId: cpAnalysis?.id,
       academicYear: context.academicYear,
       subjectCode: context.subject,
@@ -115,10 +128,14 @@ export const TPManager: React.FC<TPManagerProps> = ({
       items: updatedItems,
       needsReview: false,
       reviewReason: undefined,
-      workflowStatus: 'SIAP',
       basedOnCpUpdatedAt: cp.updatedAt || new Date().toISOString(),
       basedOnAnalysisUpdatedAt: cpAnalysis?.updatedAt || new Date().toISOString(),
       updatedAt: new Date().toISOString(),
+    };
+    const val = validateTPDataWorkflow(candidateTP, cp, cpAnalysis, academicSetting);
+    const updatedTP: TPData = {
+      ...candidateTP,
+      workflowStatus: val.status,
     };
     onSaveTP(updatedTP);
     setSaveNotice(true);
@@ -162,12 +179,12 @@ export const TPManager: React.FC<TPManagerProps> = ({
       });
 
       setItems(generated);
-      const updatedTP: TPData = {
+      const candidateTP: TPData = {
         ...tp,
         academicSettingId: academicSetting.id,
         cpId: cp.id,
-        cpVersion: cp.source?.versionCode || 'TA 2026/2027',
-        cpRegulationIds: cp.source?.regulationIds || [],
+        cpVersion: cp.cpVersion ?? cp.source?.versionCode,
+        cpRegulationIds: cp.source?.regulationIds || cp.regulationIds || [],
         cpAnalysisId: cpAnalysis?.id,
         academicYear: context.academicYear,
         subjectCode: context.subject,
@@ -175,12 +192,16 @@ export const TPManager: React.FC<TPManagerProps> = ({
         items: generated,
         generatedBy: 'AI',
         generatedAt: new Date().toISOString(),
-        workflowStatus: 'DRAFT',
         needsReview: false,
         reviewReason: undefined,
         basedOnCpUpdatedAt: cp.updatedAt || new Date().toISOString(),
         basedOnAnalysisUpdatedAt: cpAnalysis?.updatedAt || new Date().toISOString(),
         updatedAt: new Date().toISOString(),
+      };
+      const val = validateTPDataWorkflow(candidateTP, cp, cpAnalysis, academicSetting);
+      const updatedTP: TPData = {
+        ...candidateTP,
+        workflowStatus: val.status,
       };
       onSaveTP(updatedTP);
     } catch (err: unknown) {
@@ -200,8 +221,8 @@ export const TPManager: React.FC<TPManagerProps> = ({
       ...tp,
       academicSettingId: academicSetting.id,
       cpId: cp.id,
-      cpVersion: cp.source?.versionCode || 'TA 2026/2027',
-      cpRegulationIds: cp.source?.regulationIds || [],
+      cpVersion: cp.cpVersion ?? cp.source?.versionCode,
+      cpRegulationIds: cp.source?.regulationIds || cp.regulationIds || [],
       cpAnalysisId: cpAnalysis?.id,
       academicYear: context.academicYear,
       subjectCode: context.subject,
@@ -217,7 +238,7 @@ export const TPManager: React.FC<TPManagerProps> = ({
 
     const updatedTP: TPData = {
       ...testTP,
-      workflowStatus: val.isSiap ? 'SIAP' : 'PERLU_DILENGKAPI',
+      workflowStatus: val.status,
       needsReview: false,
       reviewReason: undefined,
     };

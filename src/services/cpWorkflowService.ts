@@ -2,6 +2,9 @@ import {
   CPData,
   CPAnalysisData,
   TPData,
+  TPItem,
+  ATPData,
+  ATPItem,
   WorkflowCompletionStatus,
   ActiveContext,
   AcademicSetting,
@@ -176,6 +179,14 @@ export function validateTPDataWorkflow(
     };
   }
 
+  // Check essential provenance fields
+  if (!tp.academicSettingId) {
+    issues.push('TP belum terikat pada Academic Setting (academicSettingId).');
+  }
+  if (tp.cpId && cp && cp.id && tp.cpId !== cp.id) {
+    issues.push(`ID CP pada TP (${tp.cpId}) tidak sesuai dengan CP rujukan (${cp.id}).`);
+  }
+
   // Check if review is flagged
   if (tp.needsReview) {
     issues.push(
@@ -186,14 +197,11 @@ export function validateTPDataWorkflow(
 
   // Check CP source validity if CP is provided
   if (cp) {
-    if (cp.source) {
-      const status = normalizeCPVerificationStatus(cp.source.verificationStatus);
-      if (status === 'SUPERSEDED') {
-        issues.push('CP sumber yang digunakan telah kedaluwarsa/digantikan (SUPERSEDED).');
-      } else if (status === 'VERSION_CONFLICT') {
-        issues.push('Terjadi konflik versi CP pada sumber rujukan (AMBIGUOUS).');
-      }
+    const cpStatus = normalizeCPVerificationStatus(cp.source?.verificationStatus || (cp as { verificationStatus?: any }).verificationStatus);
+    if (['SUPERSEDED', 'VERSION_CONFLICT', 'AMBIGUOUS', 'UNRESOLVED'].includes(cpStatus)) {
+      issues.push(`CP rujukan berstatus ${cpStatus} dan tidak valid untuk perumusan TP.`);
     }
+
     if (cp.updatedAt && tp.basedOnCpUpdatedAt) {
       const cpTime = new Date(cp.updatedAt).getTime();
       const tpCpTime = new Date(tp.basedOnCpUpdatedAt).getTime();
@@ -215,10 +223,24 @@ export function validateTPDataWorkflow(
         issues.push('Analisis CP telah diperbarui sejak TP ini dirumuskan.');
       }
     }
+    if (tp.cpAnalysisId && cpAnalysis.id && tp.cpAnalysisId !== cpAnalysis.id) {
+      issues.push('ID Analisis CP pada TP tidak sesuai dengan Analisis CP rujukan.');
+    }
   }
 
   // Check Context / AcademicSetting consistency if context is provided
   if (context) {
+    const contextSubject = (context as any).subjectCode || context.subject;
+    if (contextSubject && tp.subjectCode && tp.subjectCode !== contextSubject) {
+      issues.push(`Mata pelajaran TP (${tp.subjectCode}) tidak sesuai dengan konteks (${contextSubject}).`);
+    }
+    if (context.academicYear && tp.academicYear && tp.academicYear !== context.academicYear) {
+      issues.push(`Tahun ajaran TP (${tp.academicYear}) tidak sesuai dengan konteks (${context.academicYear}).`);
+    }
+    if (context.phase && tp.phase && tp.phase !== context.phase) {
+      issues.push(`Fase TP (${tp.phase}) tidak sesuai dengan konteks (${context.phase}).`);
+    }
+
     const level = context.level || (context.grade ? (
       ['Kelas 1', 'Kelas 2', 'Kelas 3', 'Kelas 4', 'Kelas 5', 'Kelas 6', '1', '2', '3', '4', '5', '6'].some((g) => String(context.grade).includes(g)) ? 'SD' :
       ['Kelas 7', 'Kelas 8', 'Kelas 9', '7', '8', '9'].some((g) => String(context.grade).includes(g)) ? 'SMP' : 'SMA'
@@ -265,5 +287,171 @@ export function validateTPDataWorkflow(
     status: 'SIAP',
     isSiap: true,
     issues: [],
+  };
+}
+
+// ==========================================
+// ATP REFERENCE VALIDATION & RESOLUTION
+// ==========================================
+
+export type ATPReferenceStatus =
+  | 'RESOLVED_REFERENCE'
+  | 'LEGACY_MIGRATED'
+  | 'AMBIGUOUS_REFERENCE'
+  | 'DANGLING_REFERENCE'
+  | 'UNRESOLVED_REFERENCE';
+
+export interface ATPReferenceResult {
+  status: ATPReferenceStatus;
+  canonicalTPItem?: TPItem;
+  tpId?: string;
+  issue?: string;
+}
+
+/**
+ * Resolves reference from an ATPItem to a canonical TPItem in TPData.
+ */
+export function resolveATPItemTPReference(
+  atpItem: ATPItem,
+  tpItems: TPItem[] = []
+): ATPReferenceResult {
+  // 1. If atpItem has a tpId
+  if (atpItem.tpId) {
+    const match = tpItems.find((t) => t.id === atpItem.tpId);
+    if (match) {
+      return {
+        status: 'RESOLVED_REFERENCE',
+        canonicalTPItem: match,
+        tpId: match.id,
+      };
+    } else {
+      return {
+        status: 'DANGLING_REFERENCE',
+        tpId: atpItem.tpId,
+        issue: `TP dengan ID "${atpItem.tpId}" pada langkah ke-${atpItem.stepNumber} tidak ditemukan pada TP tersimpan (Dangling Reference).`,
+      };
+    }
+  }
+
+  // 2. Legacy migration check by exact unique code
+  if (atpItem.tpCode && atpItem.tpCode.trim()) {
+    const codeMatches = tpItems.filter(
+      (t) => t.code && t.code.trim().toLowerCase() === atpItem.tpCode.trim().toLowerCase()
+    );
+    if (codeMatches.length === 1) {
+      return {
+        status: 'LEGACY_MIGRATED',
+        canonicalTPItem: codeMatches[0],
+        tpId: codeMatches[0].id,
+      };
+    } else if (codeMatches.length > 1) {
+      return {
+        status: 'AMBIGUOUS_REFERENCE',
+        issue: `Kode TP "${atpItem.tpCode}" pada langkah ke-${atpItem.stepNumber} cocok dengan lebih dari 1 butir TP (Ambiguous Reference).`,
+      };
+    }
+  }
+
+  // 3. Legacy migration check by exact unique normalized statement
+  if (atpItem.tpStatement && atpItem.tpStatement.trim()) {
+    const normStatement = atpItem.tpStatement.trim().toLowerCase();
+    const statementMatches = tpItems.filter(
+      (t) => (t.statement || t.description || '').trim().toLowerCase() === normStatement
+    );
+    if (statementMatches.length === 1) {
+      return {
+        status: 'LEGACY_MIGRATED',
+        canonicalTPItem: statementMatches[0],
+        tpId: statementMatches[0].id,
+      };
+    } else if (statementMatches.length > 1) {
+      return {
+        status: 'AMBIGUOUS_REFERENCE',
+        issue: `Kalimat TP "${atpItem.tpStatement}" pada langkah ke-${atpItem.stepNumber} cocok dengan lebih dari 1 butir TP (Ambiguous Reference).`,
+      };
+    }
+  }
+
+  // 4. Unresolved reference
+  return {
+    status: 'UNRESOLVED_REFERENCE',
+    issue: `Langkah ATP ke-${atpItem.stepNumber} (${atpItem.tpCode || 'Tanpa Kode'}) belum terhubung dengan Tujuan Pembelajaran (TP) manapun.`,
+  };
+}
+
+/**
+ * Validates all ATP items against canonical TPData.
+ */
+export function validateATPReferences(
+  atp?: ATPData,
+  tp?: TPData
+): {
+  status: WorkflowCompletionStatus;
+  isSiap: boolean;
+  issues: string[];
+  details: ATPReferenceResult[];
+} {
+  const issues: string[] = [];
+  const details: ATPReferenceResult[] = [];
+
+  if (!atp || !atp.items || atp.items.length === 0) {
+    return {
+      status: 'BELUM_DIMULAI',
+      isSiap: false,
+      issues: ['Matriks Alur Tujuan Pembelajaran (ATP) belum disusun.'],
+      details,
+    };
+  }
+
+  const tpItems = tp?.items || [];
+  for (let i = 0; i < atp.items.length; i++) {
+    const item = atp.items[i];
+    const res = resolveATPItemTPReference(item, tpItems);
+    details.push(res);
+    if (res.status === 'DANGLING_REFERENCE' || res.status === 'AMBIGUOUS_REFERENCE' || res.status === 'UNRESOLVED_REFERENCE') {
+      if (res.issue) issues.push(res.issue);
+    }
+  }
+
+  if (issues.length > 0) {
+    return {
+      status: 'PERLU_DILENGKAPI',
+      isSiap: false,
+      issues,
+      details,
+    };
+  }
+
+  return {
+    status: 'SIAP',
+    isSiap: true,
+    issues,
+    details,
+  };
+}
+
+/**
+ * Automatically migrates legacy ATP items (populating tpId if unique match found).
+ */
+export function normalizeATPReferences(atp: ATPData, tp?: TPData): ATPData {
+  if (!tp || !tp.items || tp.items.length === 0) return atp;
+
+  const updatedItems = atp.items.map((item) => {
+    const res = resolveATPItemTPReference(item, tp.items);
+    if (res.status === 'LEGACY_MIGRATED' && res.tpId) {
+      return {
+        ...item,
+        tpId: res.tpId,
+        tpCode: res.canonicalTPItem?.code || item.tpCode,
+        tpStatement: res.canonicalTPItem?.statement || item.tpStatement,
+      };
+    }
+    return item;
+  });
+
+  return {
+    ...atp,
+    tpId: atp.tpId || tp.id,
+    items: updatedItems,
   };
 }
