@@ -1140,6 +1140,71 @@ async function runCurriculumMasterTests() {
     'Kandidat CP ganda aktif menghasilkan status AMBIGUOUS tanpa memilih diam-diam'
   );
 
+  // TEST 36: Complete Phase Range (SD A/B/C, SMP D, SMA E/F), Workflow Validation & Superseded CP Testing
+  console.log('\n--- 36. Complete Phase Range, Workflow Validation & Superseded CP Testing ---');
+  
+  // Test resolveCPContext across all phases: SD A, B, C; SMP D; SMA E, F for non-religion and religion
+  const phasesToTest: { subject: string; phase: any; level: any }[] = [
+    { subject: 'PJOK', phase: 'A', level: 'SD' },
+    { subject: 'BINDO', phase: 'B', level: 'SD' },
+    { subject: 'MAT', phase: 'C', level: 'SD' },
+    { subject: 'INFORMATIKA', phase: 'D', level: 'SMP' },
+    { subject: 'FISIKA', phase: 'E', level: 'SMA' },
+    { subject: 'FISIKA', phase: 'F', level: 'SMA' },
+    { subject: 'PAI', phase: 'E', level: 'SMA' },
+  ];
+
+  for (const item of phasesToTest) {
+    const res2025 = resolveCPContext({
+      subjectCode: item.subject,
+      phase: item.phase,
+      level: item.level,
+      academicYear: '2025/2026',
+    });
+    assert(
+      res2025.status === 'RESOLVED',
+      `Fase ${item.phase} ${item.level} mapel ${item.subject} 2025/2026 teresolusi dengan RESOLVED`
+    );
+
+    const res2026 = resolveCPContext({
+      subjectCode: item.subject,
+      phase: item.phase,
+      level: item.level,
+      academicYear: '2026/2027',
+    });
+    assert(
+      res2026.status === 'RESOLVED',
+      `Fase ${item.phase} ${item.level} mapel ${item.subject} 2026/2027 teresolusi dengan RESOLVED`
+    );
+  }
+
+  // Superseded CP test
+  const supersededPool: any[] = [
+    {
+      id: 'cp-old-superseded',
+      subjectCode: 'MAT',
+      phase: 'A',
+      level: 'SD',
+      regulationSourceId: 'DEC-OLD',
+      verificationStatus: 'SUPERSEDED',
+      generalDescription: 'CP Lama yang digantikan',
+      elements: [],
+      effectiveUntil: '2025-06-30',
+    },
+  ];
+
+  const supersededRes = resolveCPContext({
+    subjectCode: 'MAT',
+    phase: 'A',
+    level: 'SD',
+    academicYear: '2026/2027',
+    entriesPool: supersededPool,
+  });
+  assert(
+    supersededRes.status === 'UNRESOLVED',
+    'CP yang digantikan (SUPERSEDED) tidak terpilih dan mengembalikan UNRESOLVED'
+  );
+
   console.log('\n===========================================================');
   console.log('🎉 ALL CURRICULUM MASTER TESTS PASSED SUCCESSFULLY!');
   console.log('===========================================================');

@@ -30,6 +30,11 @@ import {
 } from '../types';
 import { getCurriculumTypeFromSetting, isK13 } from '../services/curriculumRouter';
 
+import {
+  validateCPDataWorkflow,
+  validateCPAnalysisDataWorkflow,
+} from '../services/cpWorkflowService';
+
 interface WorkflowStepperProps {
   currentStep: WorkflowStepId;
   onSelectStep: (step: WorkflowStepId) => void;
@@ -67,11 +72,18 @@ export const WorkflowStepper: React.FC<WorkflowStepperProps> = ({
   const isAcademicComplete = !!(academicSetting?.subject && academicSetting?.grade);
 
   // Merdeka steps completion & gating
-  const isCPComplete = !!(
+  const cpValidation = validateCPDataWorkflow(cp, academicSetting);
+  const cpAnalysisValidation = validateCPAnalysisDataWorkflow(cpAnalysis, cp);
+
+  const isCPComplete = cpValidation.isSiap || !!(
     (cp?.generalDescription && cp.generalDescription.trim().length > 10) ||
     (cp?.elements && cp.elements.length > 0)
   );
-  const isCPAnalysisComplete = !!(cpAnalysis?.items && cpAnalysis.items.length > 0);
+  const isCPAnalysisComplete = cpAnalysisValidation.isSiap || !!(
+    cpAnalysis?.items &&
+    cpAnalysis.items.length > 0 &&
+    !cpAnalysis.needsReview
+  );
   const isTPComplete = !!(tp?.items && tp.items.length > 0);
   const isATPComplete = !!(atp?.items && atp.items.length > 0);
 
@@ -215,8 +227,8 @@ export const WorkflowStepper: React.FC<WorkflowStepperProps> = ({
           sub: 'Tujuan Pembelajaran',
           icon: <Target className="w-4 h-4" />,
           isComplete: isTPComplete,
-          isLocked: !isCPComplete,
-          lockReason: 'Memerlukan data CP terlebih dahulu',
+          isLocked: !isCPAnalysisComplete,
+          lockReason: 'Memerlukan Analisis CP yang valid terlebih dahulu',
         },
         {
           id: 'atp',

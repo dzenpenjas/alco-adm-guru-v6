@@ -20,9 +20,11 @@ export interface ResolveCPOptions {
   subjectCode?: string;
   subjectInput?: string;
   subjectCodeOrName?: string;
-  phase: CurriculumPhase;
+  phase?: CurriculumPhase | string;
   academicYear?: string;
+  curriculumType?: string;
   level?: SchoolLevel;
+  grade?: number | string;
   entriesPool?: MasterCPEntry[];
 }
 
@@ -34,18 +36,42 @@ export interface CPResolutionResult {
   reason?: string;
 }
 
+export function derivePhaseFromGrade(grade: number | string): CurriculumPhase | undefined {
+  const gNum = typeof grade === 'number' ? grade : parseInt(String(grade).replace(/\D/g, ''), 10);
+  if (isNaN(gNum)) return undefined;
+  if (gNum === 1 || gNum === 2) return 'A';
+  if (gNum === 3 || gNum === 4) return 'B';
+  if (gNum === 5 || gNum === 6) return 'C';
+  if (gNum >= 7 && gNum <= 9) return 'D';
+  if (gNum === 10) return 'E';
+  if (gNum === 11 || gNum === 12) return 'F';
+  return undefined;
+}
+
+function cleanPhase(p?: string): CurriculumPhase | undefined {
+  if (!p) return undefined;
+  const upper = p.trim().toUpperCase();
+  if (upper === 'A' || upper === 'FASE A') return 'A';
+  if (upper === 'B' || upper === 'FASE B') return 'B';
+  if (upper === 'C' || upper === 'FASE C') return 'C';
+  if (upper === 'D' || upper === 'FASE D') return 'D';
+  if (upper === 'E' || upper === 'FASE E') return 'E';
+  if (upper === 'F' || upper === 'FASE F') return 'F';
+  return undefined;
+}
+
 /**
- * Menyelesaikan Capaian Pembelajaran resmi berdasarkan mata pelajaran dan fase.
+ * Menyelesaikan Capaian Pembelajaran resmi berdasarkan mata pelajaran, fase/kelas, dan tahun ajaran.
  * Mencegah pengembalian kandidat pertama saat terjadi ambiguitas (status AMBIGUOUS jika > 1).
- * Mendukung baik pemanggilan dengan positional arguments maupun options object.
+ * Mendukung pemanggilan dengan options object maupun positional arguments.
  */
 export function resolveCPContext(
   subjectOrOptions: string | ResolveCPOptions,
-  phaseArg?: CurriculumPhase,
+  phaseArg?: CurriculumPhase | string,
   academicYearArg?: string
 ): CPResolutionResult {
   let subjectInput = '';
-  let phase: CurriculumPhase;
+  let phase: CurriculumPhase | undefined;
   let academicYear: string | undefined;
   let levelFilter: SchoolLevel | undefined;
   let sourcePool = ALL_MASTER_CP_ENTRIES;
@@ -56,7 +82,10 @@ export function resolveCPContext(
       subjectOrOptions.subjectInput ||
       subjectOrOptions.subjectCodeOrName ||
       '';
-    phase = subjectOrOptions.phase;
+    phase = cleanPhase(subjectOrOptions.phase as string);
+    if (!phase && subjectOrOptions.grade !== undefined) {
+      phase = derivePhaseFromGrade(subjectOrOptions.grade);
+    }
     academicYear = subjectOrOptions.academicYear;
     levelFilter = subjectOrOptions.level;
     if (subjectOrOptions.entriesPool) {
@@ -64,7 +93,7 @@ export function resolveCPContext(
     }
   } else {
     subjectInput = typeof subjectOrOptions === 'string' ? subjectOrOptions : '';
-    phase = phaseArg!;
+    phase = cleanPhase(phaseArg);
     academicYear = academicYearArg;
   }
 
@@ -161,6 +190,8 @@ export function resolveCPContext(
     reason: `Tidak ditemukan Capaian Pembelajaran untuk ${code} Fase ${phase}${academicYear ? ` pada TA ${academicYear}` : ''}.`,
   };
 }
+
+export const resolveCP = resolveCPContext;
 
 /**
  * Cari Capaian Pembelajaran resmi berdasarkan mata pelajaran dan fase (serta tahun ajaran jika tersedia).

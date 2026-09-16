@@ -120,7 +120,9 @@ export interface ActiveContext {
   regulationReference?: string;
 }
 
-export type CPVerificationStatus = 'verified' | 'unverified' | 'local_reference';
+export type WorkflowCompletionStatus = 'BELUM_DIMULAI' | 'DRAFT' | 'PERLU_DILENGKAPI' | 'SIAP';
+
+export type CPVerificationStatus = 'verified' | 'unverified' | 'local_reference' | 'superseded' | 'version_conflict';
 
 export interface CPSource {
   title: string;
@@ -130,6 +132,8 @@ export interface CPSource {
   page?: string;
   retrievedAt: string;
   verificationStatus: CPVerificationStatus;
+  regulationId?: string;
+  regulationIds?: string[];
 }
 
 export interface CPElem {
@@ -141,10 +145,14 @@ export interface CPElem {
 export interface CPData {
   id: string;
   academicSettingId: string;
+  cpId?: string;
+  cpVersion?: string;
+  regulationIds?: string[];
   generalDescription: string;
   elements: CPElem[];
   source?: CPSource;
   aiNotes?: string;
+  workflowStatus?: WorkflowCompletionStatus;
   lastEditedAt?: string;
   updatedAt: string;
 }
@@ -165,9 +173,20 @@ export interface CPAnalysisData {
   id: string;
   academicSettingId: string;
   cpId?: string;
+  cpSourceId?: string;
+  cpRegulationIds?: string[];
+  cpVersion?: string;
+  academicYear?: string;
+  subjectCode?: string;
+  phase?: string;
   generalSummary?: string;
   items: CPAnalysisItem[];
+  generatedBy?: 'AI' | 'TEACHER' | 'AI_EDITED_BY_TEACHER';
+  generatedAt?: string;
   basedOnCpUpdatedAt?: string;
+  workflowStatus?: WorkflowCompletionStatus;
+  needsReview?: boolean;
+  reviewReason?: string;
   updatedAt: string;
 }
 

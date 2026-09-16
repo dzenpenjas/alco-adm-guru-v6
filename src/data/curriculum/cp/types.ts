@@ -13,6 +13,7 @@ export interface MasterCPEntry {
   generalDescription: string;
   elements: CPElement[];
   regulationSourceId: string;
+  regulationIds?: string[];
   evidence?: CurriculumRuleEvidence[];
   implementationFromAcademicYear?: string | null;
   effectiveFrom?: string;

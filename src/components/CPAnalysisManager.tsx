@@ -13,6 +13,8 @@ import {
   BookOpen,
   Info,
   Lightbulb,
+  AlertTriangle,
+  ShieldCheck,
 } from 'lucide-react';
 import {
   CPData,
@@ -22,6 +24,7 @@ import {
   TeacherProfile,
   ActiveContext,
 } from '../types';
+import { validateCPAnalysisDataWorkflow } from '../services/cpWorkflowService';
 
 interface CPAnalysisManagerProps {
   cp: CPData;
@@ -79,19 +82,35 @@ export const CPAnalysisManager: React.FC<CPAnalysisManagerProps> = ({
   const [generalSummary, setGeneralSummary] = useState(
     cpAnalysis?.generalSummary || 'Analisis kompetensi dan materi esensial diturunkan langsung dari CP Fase untuk perumusan Tujuan Pembelajaran (TP).'
   );
+  const [generatedBy, setGeneratedBy] = useState<'AI' | 'TEACHER' | 'AI_EDITED_BY_TEACHER'>(
+    cpAnalysis?.generatedBy || 'AI'
+  );
   const [showSavedToast, setShowSavedToast] = useState(false);
 
   useEffect(() => {
     if (cpAnalysis?.items && cpAnalysis.items.length > 0) {
       setItems(cpAnalysis.items);
       setGeneralSummary(cpAnalysis.generalSummary || '');
+      if (cpAnalysis.generatedBy) setGeneratedBy(cpAnalysis.generatedBy);
     }
   }, [cpAnalysis]);
+
+  // Check if source CP was updated after analysis was created
+  const isCPUpdatedSinceAnalysis =
+    cp &&
+    cpAnalysis?.basedOnCpUpdatedAt &&
+    cp.updatedAt &&
+    new Date(cp.updatedAt).getTime() > new Date(cpAnalysis.basedOnCpUpdatedAt).getTime() + 1000;
+
+  const needsReview = cpAnalysis?.needsReview || isCPUpdatedSinceAnalysis;
 
   const handleUpdateItem = (id: string, field: keyof CPAnalysisItem, value: any) => {
     setItems((prev) =>
       prev.map((it) => (it.id === id ? { ...it, [field]: value } : it))
     );
+    if (generatedBy === 'AI') {
+      setGeneratedBy('AI_EDITED_BY_TEACHER');
+    }
   };
 
   const handleAddItem = () => {
@@ -106,19 +125,34 @@ export const CPAnalysisManager: React.FC<CPAnalysisManagerProps> = ({
       order: items.length + 1,
     };
     setItems([...items, newItem]);
+    setGeneratedBy('AI_EDITED_BY_TEACHER');
   };
 
   const handleDeleteItem = (id: string) => {
     setItems(items.filter((it) => it.id !== id));
+    setGeneratedBy('AI_EDITED_BY_TEACHER');
   };
 
   const handleSave = () => {
+    const validation = validateCPAnalysisDataWorkflow({ items } as any, cp);
     const updated: CPAnalysisData = {
       id: cpAnalysis?.id || `cpanalysis-${academicSetting.id}`,
       academicSettingId: academicSetting.id,
       cpId: cp.id,
+      cpSourceId: cp.source?.title,
+      cpRegulationIds: cp.regulationIds || (cp.source?.regulationId ? [cp.source.regulationId] : []),
+      cpVersion: cp.cpVersion || '2026',
+      academicYear: academicSetting.academicYear,
+      subjectCode: academicSetting.subject,
+      phase: academicSetting.phase,
       generalSummary,
       items,
+      generatedBy,
+      generatedAt: cpAnalysis?.generatedAt || new Date().toISOString(),
+      basedOnCpUpdatedAt: cp.updatedAt || new Date().toISOString(),
+      workflowStatus: validation.isSiap ? 'SIAP' : 'PERLU_DILENGKAPI',
+      needsReview: false,
+      reviewReason: undefined,
       updatedAt: new Date().toISOString(),
     };
     onSaveCPAnalysis(updated);
@@ -142,7 +176,43 @@ export const CPAnalysisManager: React.FC<CPAnalysisManagerProps> = ({
       order: idx + 1,
     }));
     setItems(derived);
+    setGeneratedBy('AI');
     handleSave();
+  };
+
+  // Verification status display label
+  const getVerificationBadge = () => {
+    const status = cp.source?.verificationStatus || 'unverified';
+    if (status === 'verified' || status === ('VERIFIED' as any)) {
+      return (
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 border border-emerald-300">
+          <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+          Terverifikasi Resmi
+        </span>
+      );
+    }
+    if (status === 'superseded' || status === ('SUPERSEDED' as any)) {
+      return (
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800 border border-red-300">
+          <AlertTriangle className="w-3.5 h-3.5 text-red-600" />
+          Tidak Berlaku / Digantikan
+        </span>
+      );
+    }
+    if (status === 'version_conflict') {
+      return (
+        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-amber-100 text-amber-800 border border-amber-300">
+          <AlertTriangle className="w-3.5 h-3.5 text-amber-600" />
+          Konflik Versi
+        </span>
+      );
+    }
+    return (
+      <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-slate-100 text-slate-700 border border-slate-300">
+        <Info className="w-3.5 h-3.5 text-slate-500" />
+        Belum Terverifikasi
+      </span>
+    );
   };
 
   return (
@@ -150,7 +220,7 @@ export const CPAnalysisManager: React.FC<CPAnalysisManagerProps> = ({
       {/* Header card */}
       <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-xs flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             <span className="bg-blue-100 text-blue-800 text-xs font-bold px-2.5 py-1 rounded-md">
               Langkah 04 — Kurikulum Merdeka
             </span>
@@ -194,13 +264,55 @@ export const CPAnalysisManager: React.FC<CPAnalysisManagerProps> = ({
         </div>
       )}
 
+      {/* Provenance & Source CP Banner */}
+      <div className="bg-slate-900 text-white rounded-2xl p-4 border border-slate-800 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs">
+        <div className="space-y-1">
+          <div className="flex items-center gap-2">
+            <span className="text-slate-400 font-bold uppercase tracking-wider text-[10px]">
+              Analisis Berdasarkan CP Sumber:
+            </span>
+            {getVerificationBadge()}
+          </div>
+          <p className="font-semibold text-slate-200">
+            Mapel: <span className="text-white">{academicSetting.subject}</span> | Fase:{' '}
+            <span className="text-blue-300">{academicSetting.phase}</span> | Sumber:{' '}
+            <span className="text-emerald-300">{cp.source?.title || 'Dokumen CP Workspace'}</span>
+          </p>
+          {cp.source?.institution && (
+            <p className="text-slate-400 text-[11px]">
+              Penerbit: {cp.source.institution} ({cp.source.documentYear || '2026'})
+            </p>
+          )}
+        </div>
+        <div className="flex items-center gap-2">
+          <span className="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 font-mono text-[11px]">
+            Mode: {generatedBy === 'AI' ? 'Hasil Analisis AI' : generatedBy === 'AI_EDITED_BY_TEACHER' ? 'AI + Editan Guru' : 'Disusun Guru'}
+          </span>
+        </div>
+      </div>
+
+      {/* Review alert if source CP was updated */}
+      {needsReview && (
+        <div className="p-4 bg-amber-50 border border-amber-300 rounded-2xl text-xs text-amber-900 flex items-start gap-3">
+          <AlertTriangle className="w-5 h-5 text-amber-600 shrink-0 mt-0.5" />
+          <div className="space-y-1">
+            <h4 className="font-bold text-amber-950">
+              Perhatian: Dokumen CP Sumber Telah Diperbarui
+            </h4>
+            <p className="text-amber-800">
+              Versi teks CP di workspace atau regulasi acuan telah mengalami pembaruan. Mohon periksa kembali ketersesuaian hasil bedah kompetensi dan lingkup materi sebelum melanjut ke tahap TP.
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Overview Context Box */}
       <div className="bg-blue-50/60 rounded-2xl p-4 border border-blue-200/70 text-xs text-blue-900 flex items-start gap-3">
         <Lightbulb className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
         <div className="space-y-1 flex-1">
           <span className="font-bold">Panduan Analisis CP Kurikulum Merdeka (Berdasarkan Panduan Pembelajaran & Asesmen):</span>
           <p className="text-blue-800">
-            Setiap kalimat CP dipecah menjadi dua komponen vital: <strong>Kompetensi</strong> (kemampuan yang harus dicapai siswa melalui Kata Kerja Operasional) dan <strong>Lingkup Materi</strong> (konsep esensial yang dipelajari). Kombinasi keduanya akan menghasilkan butir Tujuan Pembelajaran (TP) pada langkah berikutnya.
+            Setiap kalimat CP dipecah menjadi dua komponen vital: <strong>Kompetensi</strong> (kemampuan yang harus dicapai siswa melalui Kata Kerja Operasional) dan <strong>Lingkup Materi</strong> (konsep esensial yang dipelajari). Hasil bedah ini disimpan terpisah dari teks CP resmi untuk menjaga kemurnian dokumen normatif pemerintah.
           </p>
         </div>
       </div>
@@ -213,7 +325,10 @@ export const CPAnalysisManager: React.FC<CPAnalysisManagerProps> = ({
         <textarea
           rows={2}
           value={generalSummary}
-          onChange={(e) => setGeneralSummary(e.target.value)}
+          onChange={(e) => {
+            setGeneralSummary(e.target.value);
+            if (generatedBy === 'AI') setGeneratedBy('AI_EDITED_BY_TEACHER');
+          }}
           placeholder="Tuliskan catatan umum mengenai pendekatan analisis CP pada mata pelajaran dan fase ini..."
           className="w-full text-xs text-slate-800 bg-slate-50 border border-slate-200 rounded-xl p-3 focus:bg-white focus:ring-2 focus:ring-blue-500 focus:outline-hidden"
         />
